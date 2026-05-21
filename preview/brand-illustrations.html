@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); background: #0A2540; padding: 20px 24px; }
+  h3 { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8AAE; margin: 16px 0 10px; }
+  h3:first-child { margin-top: 0; }
+  .row { display: flex; gap: 16px; }
+
+  .illus-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; flex: 1; }
+  .illus-label { font-size: 10px; color: #6B8AAE; padding: 8px 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+</style>
+</head>
+<body>
+  <h3>Abstract Graphic Motifs</h3>
+  <div class="row">
+    <div class="illus-card">
+      <img src="../assets/node-graph.svg" style="width:100%; display:block;" alt="Node graph illustration">
+      <div class="illus-label">Data Flow / Node Graph</div>
+    </div>
+    <div class="illus-card">
+      <img src="../assets/architecture.svg" style="width:100%; display:block;" alt="Architecture diagram">
+      <div class="illus-label">System Architecture Diagram</div>
+    </div>
+  </div>
+  <div style="font-size:11px; color:#6B8AAE; margin-top:14px; line-height:1.6; max-width:600px;">
+    All illustrations use the navy/cyan palette only. No stock photography of robots, servers, or generic "tech" imagery. Graphics convey technical depth without visual noise.
+  </div>
+</body>
+</html>

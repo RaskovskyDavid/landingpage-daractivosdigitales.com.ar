@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); background: #0A2540; padding: 28px 32px; }
+  .row { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .logo-block { display: flex; flex-direction: column; gap: 6px; }
+  .logo-label { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8AAE; margin-bottom: 6px; }
+
+  /* Logo renders */
+  .logo-full { display: flex; align-items: center; gap: 12px; }
+  .logo-wordmark { font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -0.03em; }
+  .logo-sep { width: 2px; height: 30px; background: #00D4FF; border-radius: 1px; }
+  .logo-sub { display: flex; flex-direction: column; }
+  .logo-sub span { font-size: 10px; font-weight: 500; color: #8EA8C4; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.4; }
+
+  /* On light */
+  .light-bg { background: #fff; padding: 20px 24px; border-radius: 10px; }
+  .logo-wordmark-dark { font-size: 28px; font-weight: 700; color: #0A2540; letter-spacing: -0.03em; }
+  .logo-sub-dark span { color: #6B8AAE; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.4; }
+
+  /* Stacked / compact logo */
+  .logo-stacked { text-align: center; }
+  .logo-stacked .mark { font-size: 22px; font-weight: 800; color: #00D4FF; letter-spacing: -0.02em; line-height: 1; }
+  .logo-stacked .tagline { font-size: 8px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #8EA8C4; margin-top: 4px; }
+
+  .divider { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; }
+</style>
+</head>
+<body>
+  <div class="logo-label">Primary Lockup — On Dark</div>
+  <div class="row">
+    <div class="logo-block">
+      <div class="logo-full">
+        <div class="logo-wordmark">DAR</div>
+        <div class="logo-sep"></div>
+        <div class="logo-sub">
+          <span>Activos</span>
+          <span>Digitales</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="logo-label">Primary Lockup — On Light</div>
+  <div class="light-bg">
+    <div class="logo-full">
+      <div class="logo-wordmark-dark">DAR</div>
+      <div class="logo-sep"></div>
+      <div class="logo-sub-dark">
+        <span>Activos</span>
+        <span>Digitales</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="logo-label">Compact Mark</div>
+  <div class="row">
+    <div class="logo-stacked">
+      <div class="mark">DAR</div>
+      <div class="tagline">Activos Digitales</div>
+    </div>
+    <div style="font-size:11px; color:#6B8AAE; line-height:1.6; max-width:260px;">
+      The cyan <span style="color:#00D4FF">|</span> pipe separator is the brand's
+      most distinctive typographic element — always rendered in Electric Cyan #00D4FF.
+    </div>
+  </div>
+</body>
+</html>

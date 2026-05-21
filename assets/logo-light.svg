@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" fill="none">
+  
+  <text x="0" y="36" font-family="&#39;Plus Jakarta Sans&#39;, system-ui, sans-serif" font-weight="700" font-size="32" fill="#FFFFFF" letter-spacing="-0.5">DAR</text>
+  
+  <rect x="72" y="6" width="2" height="36" fill="#00D4FF" rx="1"></rect>
+  
+  <text x="82" y="26" font-family="&#39;Plus Jakarta Sans&#39;, system-ui, sans-serif" font-weight="500" font-size="13" fill="#8EA8C4" letter-spacing="0.5">ACTIVOS</text>
+  <text x="82" y="42" font-family="&#39;Plus Jakarta Sans&#39;, system-ui, sans-serif" font-weight="500" font-size="13" fill="#8EA8C4" letter-spacing="0.5">DIGITALES</text>
+</svg>

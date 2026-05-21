@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); background: #0A2540; }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 72px;
+    background: rgba(10,37,64,0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-text { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+  .logo-sep { width: 2px; height: 26px; background: #00D4FF; border-radius: 1px; }
+  .logo-sub { display: flex; flex-direction: column; }
+  .logo-sub span { font-size: 9px; font-weight: 500; color: #8EA8C4; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-link { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 200ms; }
+  .nav-link:hover { color: #fff; }
+  .btn-nav {
+    padding: 9px 20px; background: #00D4FF; color: #0A2540;
+    border-radius: 8px; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.03em; border: none; cursor: pointer;
+    transition: background 200ms, transform 200ms;
+  }
+  .btn-nav:hover { background: #7AEAFF; transform: translateY(-1px); }
+
+  /* Scrolled state */
+  .nav-scrolled {
+    margin-top: 12px;
+    background: rgba(10,37,64,0.75);
+    border-radius: 0 0 8px 8px;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <div class="logo-text">DAR</div>
+      <div class="logo-sep"></div>
+      <div class="logo-sub">
+        <span>Activos</span>
+        <span>Digitales</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" href="#">Servicios</a>
+      <a class="nav-link" href="#">Modelo de Propiedad</a>
+      <a class="nav-link" href="#">Trayectoria</a>
+      <button class="btn-nav">Agendar charla técnica</button>
+    </div>
+  </nav>
+</body>
+</html>

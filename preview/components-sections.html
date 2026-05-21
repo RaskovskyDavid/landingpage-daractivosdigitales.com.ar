@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); background: #0A2540; }
+
+  /* Section header on dark */
+  .section-header-dark {
+    padding: 40px 48px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .overline { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #00D4FF; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .overline::before { content: ''; display: block; width: 24px; height: 2px; background: #00D4FF; border-radius: 1px; }
+  .section-title { font-size: 36px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1.2; max-width: 560px; }
+  .section-subtitle { font-size: 16px; color: #8EA8C4; margin-top: 12px; line-height: 1.6; max-width: 520px; }
+
+  /* Divider */
+  .divider { display: flex; align-items: center; gap: 16px; padding: 20px 48px; }
+  .divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+  .divider-dot { width: 6px; height: 6px; border-radius: 50%; background: #00D4FF; }
+
+  /* Section header on light */
+  .section-header-light {
+    background: #F5F8FA;
+    padding: 40px 48px 32px;
+  }
+  .overline-light { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0099CC; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .overline-light::before { content: ''; display: block; width: 24px; height: 2px; background: #00D4FF; border-radius: 1px; }
+  .section-title-light { font-size: 36px; font-weight: 700; color: #0A2540; letter-spacing: -0.02em; line-height: 1.2; max-width: 560px; }
+  .section-subtitle-light { font-size: 16px; color: #4A6280; margin-top: 12px; line-height: 1.6; max-width: 520px; }
+</style>
+</head>
+<body>
+  <div class="section-header-dark">
+    <div class="overline">Servicios</div>
+    <div class="section-title">Ingeniería que trabaja para usted</div>
+    <div class="section-subtitle">Soluciones a medida para empresas que no pueden permitirse el fracaso tecnológico.</div>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="section-header-light">
+    <div class="overline-light">Modelo de Propiedad</div>
+    <div class="section-title-light">Un modelo pensado para el empresario actual</div>
+    <div class="section-subtitle-light">Suscripción mensual con transferencia garantizada de propiedad del código fuente.</div>
+  </div>
+</body>
+</html>

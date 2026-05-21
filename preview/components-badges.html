@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); padding: 20px 24px; background: #F5F8FA; }
+  h3 { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8AAE; margin: 16px 0 10px; }
+  h3:first-child { margin-top: 0; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* Badges */
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 24px; }
+  .badge-cyan { background: rgba(0,212,255,0.12); color: #00AACF; border: 1px solid rgba(0,212,255,0.25); }
+  .badge-navy { background: rgba(10,37,64,0.08); color: #0A2540; border: 1px solid rgba(10,37,64,0.15); }
+  .badge-white { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+
+  /* Tags */
+  .tag { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 4px; }
+  .tag-tech { background: rgba(13,48,96,0.08); color: #0D3060; }
+
+  /* Dot indicators */
+  .dot-row { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .dot-active { background: #00D4FF; box-shadow: 0 0 8px rgba(0,212,255,0.6); }
+  .dot-inactive { background: #8EA8C4; }
+
+  .dark-bg { background: #0A2540; padding: 14px 16px; border-radius: 8px; }
+</style>
+</head>
+<body>
+  <h3>Badges (Light)</h3>
+  <div class="row">
+    <span class="badge badge-cyan">IA · RAG</span>
+    <span class="badge badge-cyan">Nuevo</span>
+    <span class="badge badge-navy">.NET 8</span>
+    <span class="badge badge-navy">Azure</span>
+    <span class="badge badge-navy">10+ años</span>
+  </div>
+
+  <h3>Badges (Dark)</h3>
+  <div class="dark-bg">
+    <div class="row">
+      <span class="badge badge-cyan">Arquitectura de Datos</span>
+      <span class="badge badge-white">Propiedad del Código</span>
+      <span class="badge badge-cyan">Suscripción Mensual</span>
+    </div>
+  </div>
+
+  <h3>Tech Tags</h3>
+  <div class="row">
+    <span class="tag tag-tech">.NET</span>
+    <span class="tag tag-tech">Azure</span>
+    <span class="tag tag-tech">SQL Server</span>
+    <span class="tag tag-tech">RAG</span>
+    <span class="tag tag-tech">Vector DB</span>
+    <span class="tag tag-tech">C#</span>
+  </div>
+
+  <h3>Status Indicators</h3>
+  <div class="row">
+    <div class="dot-row"><div class="dot dot-active"></div><span style="color:#0A2540; font-size:13px">Sistema activo</span></div>
+    <div class="dot-row" style="margin-left:16px"><div class="dot dot-inactive"></div><span style="color:#6B8AAE; font-size:13px">En desarrollo</span></div>
+  </div>
+</body>
+</html>

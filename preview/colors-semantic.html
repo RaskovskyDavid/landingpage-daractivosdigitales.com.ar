@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F8FA; font-family: var(--font-sans); padding: 20px; }
+  .row { display: flex; gap: 10px; margin-bottom: 10px; align-items: stretch; }
+  .card { flex: 1; border-radius: 8px; padding: 14px 16px; min-height: 70px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+  .card-name { font-size: 13px; font-weight: 600; margin-top: 8px; }
+  .card-token { font-size: 9px; font-family: 'JetBrains Mono', monospace; opacity: 0.55; margin-top: 2px; }
+  h3 { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8AAE; margin: 16px 0 8px; }
+  h3:first-child { margin-top: 0; }
+</style>
+</head>
+<body>
+<h3>On Dark Background (#0A2540)</h3>
+<div class="row">
+  <div class="card" style="background:#0A2540; border: 1px solid rgba(255,255,255,0.12);">
+    <span class="card-label" style="color:rgba(255,255,255,0.5)">--fg-on-dark</span>
+    <div>
+      <div class="card-name" style="color:#FFFFFF">Primary Text</div>
+      <div class="card-token" style="color:rgba(255,255,255,0.4)">#FFFFFF · rgba(255,255,255,1)</div>
+    </div>
+  </div>
+  <div class="card" style="background:#0A2540; border: 1px solid rgba(255,255,255,0.12);">
+    <span class="card-label" style="color:rgba(255,255,255,0.5)">--fg2-on-dark</span>
+    <div>
+      <div class="card-name" style="color:#8EA8C4">Secondary Text</div>
+      <div class="card-token" style="color:rgba(255,255,255,0.4)">#8EA8C4 · Slate 400</div>
+    </div>
+  </div>
+  <div class="card" style="background:#0A2540; border: 1px solid rgba(255,255,255,0.12);">
+    <span class="card-label" style="color:rgba(255,255,255,0.5)">--accent</span>
+    <div>
+      <div class="card-name" style="color:#00D4FF">Accent / CTA</div>
+      <div class="card-token" style="color:rgba(255,255,255,0.4)">#00D4FF · Cyan 500</div>
+    </div>
+  </div>
+  <div class="card" style="background:#0A2540; border: 1px solid rgba(255,255,255,0.12);">
+    <span class="card-label" style="color:rgba(255,255,255,0.5)">--border-dark</span>
+    <div>
+      <div class="card-name" style="color:#FFFFFF">Card Border</div>
+      <div class="card-token" style="color:rgba(255,255,255,0.4)">rgba(255,255,255,0.08)</div>
+    </div>
+  </div>
+</div>
+
+<h3>On Light Background (#F5F8FA)</h3>
+<div class="row">
+  <div class="card" style="background:#fff; border:1px solid rgba(10,37,64,0.10); box-shadow:0 2px 8px rgba(10,37,64,0.06)">
+    <span class="card-label" style="color:#8EA8C4">--fg1</span>
+    <div>
+      <div class="card-name" style="color:#0A2540">Primary Text</div>
+      <div class="card-token" style="color:#8EA8C4">#0A2540 · Navy 900</div>
+    </div>
+  </div>
+  <div class="card" style="background:#fff; border:1px solid rgba(10,37,64,0.10); box-shadow:0 2px 8px rgba(10,37,64,0.06)">
+    <span class="card-label" style="color:#8EA8C4">--fg2</span>
+    <div>
+      <div class="card-name" style="color:#4A6280">Secondary Text</div>
+      <div class="card-token" style="color:#8EA8C4">#4A6280 · Slate 600</div>
+    </div>
+  </div>
+  <div class="card" style="background:#fff; border:1px solid rgba(10,37,64,0.10); box-shadow:0 2px 8px rgba(10,37,64,0.06)">
+    <span class="card-label" style="color:#8EA8C4">--fg3</span>
+    <div>
+      <div class="card-name" style="color:#8EA8C4">Muted Text</div>
+      <div class="card-token" style="color:#8EA8C4">#8EA8C4 · Slate 400</div>
+    </div>
+  </div>
+  <div class="card" style="background:#fff; border:1px solid rgba(10,37,64,0.10); box-shadow:0 2px 8px rgba(10,37,64,0.06)">
+    <span class="card-label" style="color:#8EA8C4">--border</span>
+    <div>
+      <div class="card-name" style="color:#0A2540">Border</div>
+      <div class="card-token" style="color:#8EA8C4">rgba(10,37,64,0.10)</div>
+    </div>
+  </div>
+</div>
+
+<h3>Background Surfaces</h3>
+<div class="row">
+  <div class="card" style="background:#0A2540; border:1px solid rgba(255,255,255,0.08)">
+    <span class="card-label" style="color:rgba(255,255,255,0.4)">--bg-dark</span>
+    <div class="card-name" style="color:#fff">Dark</div>
+  </div>
+  <div class="card" style="background:#0D3060; border:1px solid rgba(255,255,255,0.08)">
+    <span class="card-label" style="color:rgba(255,255,255,0.4)">--bg-dark-alt</span>
+    <div class="card-name" style="color:#fff">Dark Alt</div>
+  </div>
+  <div class="card" style="background:#F5F8FA; border:1px solid rgba(10,37,64,0.10)">
+    <span class="card-label" style="color:#8EA8C4">--bg-alt</span>
+    <div class="card-name" style="color:#0A2540">Light</div>
+  </div>
+  <div class="card" style="background:#FFFFFF; border:1px solid rgba(10,37,64,0.10)">
+    <span class="card-label" style="color:#8EA8C4">--bg-white</span>
+    <div class="card-name" style="color:#0A2540">White</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F8FA; font-family: var(--font-sans); padding: 24px 28px; }
+  .row { display: flex; align-items: center; gap: 20px; padding: 11px 0; border-bottom: 1px solid rgba(10,37,64,0.07); }
+  .row:last-child { border-bottom: none; }
+  .meta { font-size: 10px; color: #8EA8C4; font-family: 'JetBrains Mono', monospace; width: 150px; flex-shrink: 0; }
+  .overline { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #00D4FF; }
+  .label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4A6280; }
+  .caption { font-size: 12px; font-weight: 400; color: #6B8AAE; }
+  .badge { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(0,212,255,0.12); color: #00D4FF; padding: 3px 10px; border-radius: 24px; }
+  .code { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 400; color: #0D3060; background: #E8F4F8; padding: 3px 8px; border-radius: 4px; }
+  .nav-link { font-size: 14px; font-weight: 500; color: #0A2540; letter-spacing: 0.01em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="meta">Overline · 11px · 600</div>
+    <div class="overline">Servicios de Tecnología</div>
+  </div>
+  <div class="row">
+    <div class="meta">Label · 12px · 600</div>
+    <div class="label">Arquitectura de Datos</div>
+  </div>
+  <div class="row">
+    <div class="meta">Nav Link · 14px · 500</div>
+    <div class="nav-link">Modelo de Propiedad</div>
+  </div>
+  <div class="row">
+    <div class="meta">Caption · 12px · 400</div>
+    <div class="caption">Diagnóstico de costos ocultos y automatización de procesos manuales</div>
+  </div>
+  <div class="row">
+    <div class="meta">Badge · 11px · 600</div>
+    <div class="badge">Nuevo Servicio</div>
+  </div>
+  <div class="row">
+    <div class="meta">Code · Mono 13px</div>
+    <code class="code">.NET 8 · Azure · SQL Server</code>
+  </div>
+</body>
+</html>

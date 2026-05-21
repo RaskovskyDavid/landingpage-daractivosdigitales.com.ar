@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); background: #0A2540; padding: 24px 0; overflow: hidden; }
+
+  .marquee-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8AAE; text-align: center; margin-bottom: 16px; }
+
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: scroll 18s linear infinite;
+    width: max-content;
+  }
+  .marquee-wrap { overflow: hidden; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .client-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 24px; margin: 0 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 24px;
+    white-space: nowrap;
+  }
+  .client-dot { width: 5px; height: 5px; border-radius: 50%; background: #00D4FF; flex-shrink: 0; }
+  .client-name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.55); letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+  <div class="marquee-label">Confianza respaldada por trayectoria en</div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- Set 1 -->
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">Banco Galicia</div></div>
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">Papelera Tucumán</div></div>
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">Complejo Alimenticio San Salvador</div></div>
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">New Alliance Insurance Brokers</div></div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">Banco Galicia</div></div>
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">Papelera Tucumán</div></div>
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">Complejo Alimenticio San Salvador</div></div>
+      <div class="client-chip"><div class="client-dot"></div><div class="client-name">New Alliance Insurance Brokers</div></div>
+    </div>
+  </div>
+</body>
+</html>

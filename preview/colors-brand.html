@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #F5F8FA; font-family: var(--font-sans); padding: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .swatch { border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(10,37,64,0.10); }
+  .swatch-color { height: 64px; }
+  .swatch-info { background: #fff; padding: 8px 10px; }
+  .swatch-name { font-size: 11px; font-weight: 600; color: #0A2540; }
+  .swatch-hex { font-size: 10px; color: #6B8AAE; font-family: var(--font-mono); margin-top: 2px; }
+  .swatch-role { font-size: 9px; color: #8EA8C4; margin-top: 2px; letter-spacing: 0.05em; text-transform: uppercase; }
+  h3 { font-family: var(--font-sans); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B8AAE; margin: 16px 0 8px; }
+  h3:first-child { margin-top: 0; }
+</style>
+</head>
+<body>
+<h3>Navy Scale</h3>
+<div class="grid">
+  <div class="swatch"><div class="swatch-color" style="background:#06192d"></div><div class="swatch-info"><div class="swatch-name">Navy 950</div><div class="swatch-hex">#06192D</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0A2540"></div><div class="swatch-info"><div class="swatch-name">Navy 900</div><div class="swatch-hex">#0A2540</div><div class="swatch-role">Primary Dark</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0D3060"></div><div class="swatch-info"><div class="swatch-name">Navy 800</div><div class="swatch-hex">#0D3060</div><div class="swatch-role">Dark Alt</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#1A4A7A"></div><div class="swatch-info"><div class="swatch-name">Navy 700</div><div class="swatch-hex">#1A4A7A</div><div class="swatch-role">Border Dark</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#2563A8"></div><div class="swatch-info"><div class="swatch-name">Navy 600</div><div class="swatch-hex">#2563A8</div></div></div>
+</div>
+
+<h3>Cyan Accent</h3>
+<div class="grid">
+  <div class="swatch"><div class="swatch-color" style="background:#00D4FF"></div><div class="swatch-info"><div class="swatch-name">Cyan 500</div><div class="swatch-hex">#00D4FF</div><div class="swatch-role">Primary Accent</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#00AACF"></div><div class="swatch-info"><div class="swatch-name">Cyan 600</div><div class="swatch-hex">#00AACF</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0099CC"></div><div class="swatch-info"><div class="swatch-name">Cyan 700</div><div class="swatch-hex">#0099CC</div><div class="swatch-role">Hover</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#7AEAFF"></div><div class="swatch-info"><div class="swatch-name">Cyan 300</div><div class="swatch-hex">#7AEAFF</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#D0F6FF"></div><div class="swatch-info"><div class="swatch-name">Cyan 100</div><div class="swatch-hex">#D0F6FF</div></div></div>
+</div>
+
+<h3>Slate Neutrals</h3>
+<div class="grid">
+  <div class="swatch"><div class="swatch-color" style="background:#4A6280"></div><div class="swatch-info"><div class="swatch-name">Slate 600</div><div class="swatch-hex">#4A6280</div><div class="swatch-role">Text Secondary</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#6B8AAE"></div><div class="swatch-info"><div class="swatch-name">Slate 500</div><div class="swatch-hex">#6B8AAE</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#8EA8C4"></div><div class="swatch-info"><div class="swatch-name">Slate 400</div><div class="swatch-hex">#8EA8C4</div><div class="swatch-role">Text Muted</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#B8CEDD"></div><div class="swatch-info"><div class="swatch-name">Slate 300</div><div class="swatch-hex">#B8CEDD</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#D8E6F0"></div><div class="swatch-info"><div class="swatch-name">Slate 200</div><div class="swatch-hex">#D8E6F0</div></div></div>
+</div>
+</body>
+</html>
