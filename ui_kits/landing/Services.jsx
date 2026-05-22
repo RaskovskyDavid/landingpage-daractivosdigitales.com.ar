@@ -4,12 +4,12 @@
 const DARServices = () => {
   const sectionStyle = {
     background: '#0A2540',
-    padding: '96px 48px',
+    padding: '96px 0',
     fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
   };
 
   const containerStyle = {
-    maxWidth: '1200px', margin: '0 auto',
+    width: '100%',
   };
 
   const headerStyle = {
@@ -32,7 +32,7 @@ const DARServices = () => {
   };
 
   const gridStyle = {
-    display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px',
+    width: '100%',
   };
 
   const services = [
@@ -115,7 +115,7 @@ const DARServices = () => {
 
   return (
     <section style={sectionStyle} id="servicios">
-      <div style={containerStyle}>
+      <div className="dar-container" style={containerStyle}>
         <div style={headerStyle}>
           <div style={overlineStyle}>
             <span style={{ display: 'block', width: '24px', height: '2px', background: '#00D4FF', borderRadius: '1px', flexShrink: 0 }}></span>
@@ -123,12 +123,9 @@ const DARServices = () => {
           </div>
           <h2 style={titleStyle}>Ingeniería que trabaja para usted</h2>
         </div>
-        <div style={gridStyle}>
+        <div className="dar-services-grid" style={gridStyle}>
           {services.map((s, i) => (
-            <div key={i} style={cardStyle}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(0,212,255,0.30)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.transform = ''; }}
-            >
+            <div key={i} className="dar-service-card">
               <div style={iconWrapStyle}>{s.icon}</div>
               <div style={tagStyle}>{s.tag}</div>
               <div style={cardTitleStyle}>{s.title}</div>

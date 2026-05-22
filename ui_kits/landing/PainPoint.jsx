@@ -4,19 +4,16 @@
 const DARPainPoint = () => {
   const sectionStyle = {
     background: '#F5F8FA',
-    padding: '96px 48px',
+    padding: '96px 0',
     fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
   };
 
   const containerStyle = {
-    maxWidth: '1200px', margin: '0 auto',
-    display: 'grid', gridTemplateColumns: '1fr 1fr',
-    gap: '80px', alignItems: 'center',
+    width: '100%',
   };
 
   const leftStyle = {
     borderLeft: '2px solid #00D4FF',
-    paddingLeft: '28px',
   };
 
   const overlineStyle = {
@@ -74,23 +71,25 @@ const DARPainPoint = () => {
 
   return (
     <section style={sectionStyle} id="modelo">
-      <div style={containerStyle}>
-        <div style={leftStyle}>
-          <span style={overlineStyle}>La perspectiva del empresario</span>
-          <h2 style={titleStyle}>¿Software o Gasto?<br/>Cambie su perspectiva.</h2>
-          <p style={bodyStyle}>
-            En un mercado volátil, no puede permitirse tirar dinero en soluciones que <strong style={boldStyle}>no le pertenecen.</strong> Nuestras soluciones no son "alquileres"; son <strong style={boldStyle}>activos que se integran a su patrimonio.</strong>
-          </p>
-        </div>
+      <div className="dar-container">
+        <div className="dar-pain-container" style={containerStyle}>
+          <div className="dar-pain-left" style={leftStyle}>
+            <span style={overlineStyle}>La perspectiva del empresario</span>
+            <h2 style={titleStyle}>¿Software o Gasto?<br/>Cambie su perspectiva.</h2>
+            <p style={bodyStyle}>
+              En un mercado volátil, no puede permitirse tirar dinero en soluciones que <strong style={boldStyle}>no le pertenecen.</strong> Nuestras soluciones no son "alquileres"; son <strong style={boldStyle}>activos que se integran a su patrimonio.</strong>
+            </p>
+          </div>
 
-        <div style={rightStyle}>
-          <div style={comparisonStyle}>
-            {comparisons.map((c, i) => (
-              <div key={i} style={rowStyle(c.type)}>
-                <span style={rowLabelStyle(c.type)}>{c.label}</span>
-                <span style={rowValueStyle(c.type)}>{c.value}</span>
-              </div>
-            ))}
+          <div style={rightStyle}>
+            <div style={comparisonStyle}>
+              {comparisons.map((c, i) => (
+                <div key={i} style={rowStyle(c.type)}>
+                  <span style={rowLabelStyle(c.type)}>{c.label}</span>
+                  <span style={rowValueStyle(c.type)}>{c.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

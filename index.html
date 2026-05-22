@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     background: #F5F8FA;
@@ -57,7 +57,57 @@
     transition: color .2s;
   }
   .nav-links a:hover { color: #0A2540; }
-  @media (max-width: 720px) { .nav-links a:not(.btn) { display: none; } }
+  
+  /* ---- Mobile toggle & drawer ---- */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #0A2540;
+    cursor: pointer;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+    transition: color .2s;
+  }
+  .nav-toggle:hover { color: #0099CC; }
+  .nav-drawer {
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: rgba(245,248,250,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(10,37,64,0.08);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    z-index: 45;
+  }
+  .nav-drawer.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-drawer-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4A6280;
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(10,37,64,0.04);
+  }
+  .nav-drawer-link:hover {
+    color: #0A2540;
+  }
+  
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+  }
 
   /* ---- Buttons ---- */
   .btn {
@@ -159,6 +209,24 @@
   .contract-head {
     display: flex; justify-content: space-between; align-items: flex-start;
     margin-bottom: 28px;
+  }
+  @media (max-width: 920px) {
+    .contract {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media (max-width: 480px) {
+    .contract {
+      padding: 24px 20px;
+    }
+    .contract-head {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contract-stamp {
+      align-self: flex-start;
+    }
   }
   .contract-label {
     font-family: 'JetBrains Mono', monospace;
@@ -576,7 +644,7 @@
 <!-- ============ NAV ============ -->
 <nav>
   <div class="wrap nav-inner">
-    <div class="logo">
+    <div class="logo" style="cursor: pointer;" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeMenu();">
       <span class="word">DAR</span>
       <span class="bar"></span>
       <div class="sub"><span>Activos</span><span>Digitales</span></div>
@@ -590,8 +658,30 @@
         <span class="arrow">→</span>
       </button>
     </div>
+    <button class="nav-toggle" id="navToggle" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="hamburgerIcon">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="closeIcon" style="display: none;">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu Drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#diferencia" class="nav-drawer-link" onclick="closeMenu()">La diferencia</a>
+  <a href="#servicios" class="nav-drawer-link" onclick="closeMenu()">Qué construimos</a>
+  <a href="#como-funciona" class="nav-drawer-link" onclick="closeMenu()">Cómo funciona</a>
+  <button class="btn" style="width: 100%; justify-content: center; margin-top: 8px;" onclick="closeMenu(); openModal();">
+    Hablar con DAR
+    <span class="arrow">→</span>
+  </button>
+</div>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -640,7 +730,7 @@
         </div>
         <div class="contract-row">
           <span class="contract-key">Plazo</span>
-          <span class="contract-val">24 a 36 meses</span>
+          <span class="contract-val">1 a 36 meses</span>
         </div>
         <div class="contract-row">
           <span class="contract-key">Al finalizar el plazo</span>
@@ -820,9 +910,13 @@
 <!-- ============ FOUNDER ============ -->
 <section class="founder" id="trayectoria">
   <div class="wrap founder-grid">
-    <div class="photo">
-      <span style="font-size:28px;line-height:1;color:#B8CEDD;">DG</span>
-      <span>FOTO PROFESIONAL<br>B&amp;W · 4:5</span>
+    <div class="photo" style="padding: 0; overflow: hidden; position: relative;">
+      <img src="img/280px/dar2.png" 
+           srcset="img/280px/dar2.png 280w, img/560px/dar2.png 560w, img/840px/dar2.png 840w"
+           sizes="(max-width: 720px) 280px, 280px"
+           alt="D. Raskovsky" 
+           style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(10,37,64,0.65); backdrop-filter: blur(4px); color: rgba(255,255,255,0.85); font-family: 'JetBrains Mono', monospace; font-size: 8px; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.05em; text-transform: uppercase;">Creado con IA</div>
     </div>
     <div class="founder-body">
       <div class="eyebrow">Quién está detrás</div>
@@ -838,8 +932,8 @@
       </p>
       <div class="founder-sig">
         <div>
-          <div class="founder-name">D. García</div>
-          <div class="founder-role">Fundador · Arquitecto de Software</div>
+          <div class="founder-name">D. Raskovsky</div>
+          <div class="founder-role">Fundador · Ingeniero Informatico</div>
         </div>
       </div>
     </div>
@@ -901,6 +995,22 @@
 </div>
 
 <script>
+  const navDrawer = document.getElementById('navDrawer');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const closeIcon = document.getElementById('closeIcon');
+
+  function toggleMenu() {
+    const isOpen = navDrawer.classList.toggle('open');
+    hamburgerIcon.style.display = isOpen ? 'none' : 'block';
+    closeIcon.style.display = isOpen ? 'block' : 'none';
+  }
+
+  function closeMenu() {
+    navDrawer.classList.remove('open');
+    hamburgerIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+
   function openModal() {
     document.getElementById('modalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';

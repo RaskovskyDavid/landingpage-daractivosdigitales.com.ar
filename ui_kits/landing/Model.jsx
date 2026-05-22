@@ -4,12 +4,12 @@
 const DARModel = ({ onCTA }) => {
   const sectionStyle = {
     background: '#FFFFFF',
-    padding: '96px 48px',
+    padding: '96px 0',
     fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
   };
 
   const containerStyle = {
-    maxWidth: '1200px', margin: '0 auto',
+    width: '100%',
   };
 
   const headerStyle = { marginBottom: '56px' };
@@ -35,8 +35,7 @@ const DARModel = ({ onCTA }) => {
   };
 
   const gridStyle = {
-    display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '24px', marginBottom: '48px',
+    width: '100%',
   };
 
   const steps = [
@@ -98,12 +97,7 @@ const DARModel = ({ onCTA }) => {
   };
 
   const highlightBoxStyle = {
-    background: '#0A2540',
-    borderRadius: '12px',
-    padding: '36px 40px',
-    display: 'flex', alignItems: 'center',
-    justifyContent: 'space-between', gap: '32px',
-    flexWrap: 'wrap',
+    width: '100%',
   };
 
   const quoteStyle = {
@@ -127,7 +121,7 @@ const DARModel = ({ onCTA }) => {
 
   return (
     <section style={sectionStyle} id="modelo-propiedad">
-      <div style={containerStyle}>
+      <div className="dar-container" style={containerStyle}>
         <div style={headerStyle}>
           <div style={overlineStyle}>
             <span style={{ display: 'block', width: '24px', height: '2px', background: '#00D4FF', borderRadius: '1px', flexShrink: 0 }}></span>
@@ -137,7 +131,7 @@ const DARModel = ({ onCTA }) => {
           <p style={subtitleStyle}>Sin sorpresas. Sin letra chica. Con un contrato que garantiza que el software es suyo.</p>
         </div>
 
-        <div style={gridStyle}>
+        <div className="dar-model-grid" style={gridStyle}>
           {steps.map((s, i) => (
             <div key={i} style={cardStyle}>
               <div style={numStyle}>
@@ -150,7 +144,7 @@ const DARModel = ({ onCTA }) => {
           ))}
         </div>
 
-        <div style={highlightBoxStyle}>
+        <div className="dar-model-highlight" style={highlightBoxStyle}>
           <div style={quoteStyle}>
             "Usted es el <span style={quoteAccentStyle}>dueño</span> de su infraestructura."
           </div>

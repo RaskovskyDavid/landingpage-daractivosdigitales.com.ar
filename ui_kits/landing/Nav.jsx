@@ -11,18 +11,6 @@ const DARNav = ({ onCTA }) => {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  const navStyle = {
-    position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
-    height: '72px',
-    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-    padding: '0 48px',
-    background: scrolled ? 'rgba(10,37,64,0.95)' : 'rgba(10,37,64,0.85)',
-    backdropFilter: 'blur(20px)',
-    borderBottom: '1px solid rgba(255,255,255,0.08)',
-    transition: 'background 300ms ease',
-    fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
-  };
-
   const logoStyle = {
     display: 'flex', alignItems: 'center', gap: '12px',
     textDecoration: 'none', cursor: 'pointer',
@@ -45,10 +33,6 @@ const DARNav = ({ onCTA }) => {
   const subTextStyle = {
     fontSize: '9px', fontWeight: 500, color: '#8EA8C4',
     letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1.4,
-  };
-
-  const linksStyle = {
-    display: 'flex', alignItems: 'center', gap: '32px',
   };
 
   const linkStyle = {
@@ -76,33 +60,64 @@ const DARNav = ({ onCTA }) => {
   };
 
   return (
-    <nav style={navStyle}>
-      <div style={logoStyle} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <span style={wordmarkStyle}>DAR</span>
-        <div style={sepStyle}></div>
-        <div style={subStyle}>
-          <span style={subTextStyle}>Activos</span>
-          <span style={subTextStyle}>Digitales</span>
+    <>
+      <nav className={`dar-nav ${scrolled ? 'dar-nav-scrolled' : ''}`}>
+        <div style={logoStyle} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMenuOpen(false); }}>
+          <span style={wordmarkStyle}>DAR</span>
+          <div style={sepStyle}></div>
+          <div style={subStyle}>
+            <span style={subTextStyle}>Activos</span>
+            <span style={subTextStyle}>Digitales</span>
+          </div>
         </div>
-      </div>
 
-      <div style={linksStyle}>
-        {[['Servicios', 'servicios'], ['Modelo de Propiedad', 'modelo'], ['Trayectoria', 'about']].map(([label, id]) => (
-          <button key={id} style={linkStyle} onClick={() => scrollTo(id)}
-            onMouseEnter={e => e.target.style.color = '#fff'}
-            onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.65)'}
+        {/* Desktop Links */}
+        <div className="dar-nav-links">
+          {[['Servicios', 'servicios'], ['Modelo de Propiedad', 'modelo'], ['Trayectoria', 'about']].map(([label, id]) => (
+            <button key={id} style={linkStyle} onClick={() => scrollTo(id)}
+              onMouseEnter={e => e.target.style.color = '#fff'}
+              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.65)'}
+            >
+              {label}
+            </button>
+          ))}
+          <button style={ctaStyle} onClick={onCTA}
+            onMouseEnter={e => { e.target.style.background = '#7AEAFF'; e.target.style.transform = 'translateY(-1px)'; }}
+            onMouseLeave={e => { e.target.style.background = '#00D4FF'; e.target.style.transform = ''; }}
           >
+            Agendar charla técnica
+          </button>
+        </div>
+
+        {/* Mobile Toggle Button */}
+        <button className="dar-nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          )}
+        </button>
+      </nav>
+
+      {/* Mobile Drawer */}
+      <div className={`dar-nav-drawer ${menuOpen ? 'open' : ''}`}>
+        {[['Servicios', 'servicios'], ['Modelo de Propiedad', 'modelo'], ['Trayectoria', 'about']].map(([label, id]) => (
+          <button key={id} className="dar-nav-drawer-link" onClick={() => scrollTo(id)}>
             {label}
           </button>
         ))}
-        <button style={ctaStyle} onClick={onCTA}
-          onMouseEnter={e => { e.target.style.background = '#7AEAFF'; e.target.style.transform = 'translateY(-1px)'; }}
-          onMouseLeave={e => { e.target.style.background = '#00D4FF'; e.target.style.transform = ''; }}
-        >
+        <button className="dar-nav-drawer-cta" onClick={() => { setMenuOpen(false); onCTA(); }}>
           Agendar charla técnica
         </button>
       </div>
-    </nav>
+    </>
   );
 };
 

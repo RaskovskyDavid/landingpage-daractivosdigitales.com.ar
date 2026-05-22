@@ -5,17 +5,16 @@ const DARFooter = ({ onCTA }) => {
   const footerStyle = {
     background: '#06192d',
     borderTop: '1px solid rgba(255,255,255,0.08)',
-    padding: '64px 48px 32px',
+    padding: '64px 0 32px',
     fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
   };
 
   const containerStyle = {
-    maxWidth: '1200px', margin: '0 auto',
+    width: '100%',
   };
 
   const topStyle = {
-    display: 'grid', gridTemplateColumns: '2fr 1fr 1fr',
-    gap: '64px', marginBottom: '56px',
+    width: '100%',
   };
 
   // Brand column
@@ -71,8 +70,7 @@ const DARFooter = ({ onCTA }) => {
   };
 
   const bottomStyle = {
-    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-    flexWrap: 'wrap', gap: '12px',
+    width: '100%',
   };
 
   const legalStyle = {
@@ -86,8 +84,8 @@ const DARFooter = ({ onCTA }) => {
 
   return (
     <footer style={footerStyle}>
-      <div style={containerStyle}>
-        <div style={topStyle}>
+      <div className="dar-container" style={containerStyle}>
+        <div className="dar-footer-top" style={topStyle}>
           {/* Brand */}
           <div>
             <div style={logoRowStyle}>
@@ -119,6 +117,7 @@ const DARFooter = ({ onCTA }) => {
               <button key={l} style={linkStyle}
                 onMouseEnter={e => e.currentTarget.style.color = '#fff'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.55)'}
+                onClick={onCTA}
               >{l}</button>
             ))}
           </div>
@@ -130,6 +129,7 @@ const DARFooter = ({ onCTA }) => {
               <button key={l} style={linkStyle}
                 onMouseEnter={e => e.currentTarget.style.color = '#fff'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.55)'}
+                onClick={onCTA}
               >{l}</button>
             ))}
           </div>
@@ -137,7 +137,7 @@ const DARFooter = ({ onCTA }) => {
 
         <div style={dividerStyle}></div>
 
-        <div style={bottomStyle}>
+        <div className="dar-footer-bottom" style={bottomStyle}>
           <span style={legalStyle}>© 2025 DAR | Activos Digitales · Tucumán, Argentina</span>
           <span style={signatureStyle}>DAR: Ingeniería que no falla.</span>
         </div>
