@@ -954,7 +954,7 @@
           Agendar charla técnica
           <span class="arrow">→</span>
         </button>
-        <a href="mailto:hola@dar-ad.com" class="btn-ghost">o escribir un email →</a>
+        <a href="mailto:daractivosdigitales@gmail.com" class="btn-ghost">o escribir un email →</a>
       </div>
     </div>
   </div>
@@ -986,10 +986,10 @@
     <button class="modal-close" onclick="closeModal()">×</button>
     <h3>Hablemos de su caso</h3>
     <p>Una charla de 30 minutos para entender su situación. Sin presentación comercial.</p>
-    <input type="text" placeholder="Su nombre y empresa">
-    <input type="email" placeholder="Correo electrónico">
-    <input type="tel" placeholder="Teléfono (opcional)">
-    <button class="btn" onclick="closeModal()">Enviar solicitud <span class="arrow">→</span></button>
+    <input type="text" id="modalName" placeholder="Su nombre y empresa">
+    <input type="email" id="modalEmail" placeholder="Correo electrónico">
+    <input type="tel" id="modalPhone" placeholder="Teléfono (opcional)">
+    <button class="btn" onclick="submitForm()">Enviar solicitud <span class="arrow">→</span></button>
     <p class="modal-note">Respuesta en menos de 24 horas hábiles.</p>
   </div>
 </div>
@@ -1027,6 +1027,76 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.12 });
   reveals.forEach(el => obs.observe(el));
+
+  function submitForm() {
+    const name = document.getElementById('modalName').value.trim();
+    const email = document.getElementById('modalEmail').value.trim();
+    const phone = document.getElementById('modalPhone').value.trim();
+    const btn = document.querySelector('.modal .btn');
+
+    if (!name || !email) {
+      alert('Por favor, complete al menos su nombre/empresa y su correo electrónico.');
+      return;
+    }
+
+    // Change button state to premium loading
+    const originalBtnHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = 'Enviando solicitud <span class="arrow">...</span>';
+
+    // Prepare JSON payload for Web3Forms
+    const formData = {
+      access_key: "ea13e0f9-daa7-4f26-9769-d4ad6d3ba265",
+      name: name,
+      email: email,
+      phone: phone || "No provisto",
+      subject: "Nueva consulta de Charla Técnica — DAR",
+      from_name: "DAR | Activos Digitales"
+    };
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        // Success state
+        btn.style.background = '#00CC66';
+        btn.innerHTML = '¡Solicitud enviada! <span class="arrow">✓</span>';
+        
+        // Clean fields
+        document.getElementById('modalName').value = '';
+        document.getElementById('modalEmail').value = '';
+        document.getElementById('modalPhone').value = '';
+        
+        // Close modal after 1.8 seconds
+        setTimeout(() => {
+          closeModal();
+          // Restore button
+          btn.disabled = false;
+          btn.style.background = '';
+          btn.innerHTML = originalBtnHTML;
+        }, 1800);
+      } else {
+        // Error state
+        console.log(json);
+        alert('Hubo un error al enviar el formulario: ' + (json.message || 'Error del servidor'));
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHTML;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      alert('Hubo un error de conexión al enviar el formulario.');
+      btn.disabled = false;
+      btn.innerHTML = originalBtnHTML;
+    });
+  }
 </script>
 
 </body>
