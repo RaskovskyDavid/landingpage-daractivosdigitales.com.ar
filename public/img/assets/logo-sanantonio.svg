@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" width="100%" height="100%">
+  <rect width="220" height="80" rx="12" fill="#FFFFFF" />
+  <circle cx="36" cy="40" r="16" fill="#55A630" opacity="0.15" />
+  <rect x="28" y="32" width="16" height="16" rx="4" fill="#55A630" />
+  <text x="64" y="44" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17253D" letter-spacing="0.5">INGENIO SAN ANTONIO</text>
+</svg>

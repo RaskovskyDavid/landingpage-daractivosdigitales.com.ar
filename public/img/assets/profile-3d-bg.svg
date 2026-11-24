@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EBF4FB" />
+      <stop offset="50%" stop-color="#DCEEF9" />
+      <stop offset="100%" stop-color="#CFE6F7" />
+    </linearGradient>
+    <linearGradient id="pSphere1" x1="20%" y1="20%" x2="80%" y2="80%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <linearGradient id="pSphere2" x1="15%" y1="15%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="60%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+    <filter id="pBlur">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+  </defs>
+  <rect width="1200" height="600" fill="url(#pbg)" />
+  
+  <!-- Depth 3D spheres & capsules -->
+  <circle cx="150" cy="120" r="90" fill="url(#pSphere1)" opacity="0.5" filter="url(#pBlur)" />
+  <circle cx="1060" cy="160" r="140" fill="url(#pSphere2)" opacity="0.6" filter="url(#pBlur)" />
+  <circle cx="980" cy="480" r="110" fill="url(#pSphere1)" opacity="0.45" filter="url(#pBlur)" />
+  <circle cx="120" cy="490" r="80" fill="url(#pSphere2)" opacity="0.4" filter="url(#pBlur)" />
+  
+  <!-- Floating abstract rings -->
+  <circle cx="600" cy="300" r="280" fill="none" stroke="rgba(0,120,212,0.08)" stroke-width="2" />
+  <circle cx="600" cy="300" r="420" fill="none" stroke="rgba(0,120,212,0.05)" stroke-width="1.5" stroke-dasharray="12 12" />
+</svg>
