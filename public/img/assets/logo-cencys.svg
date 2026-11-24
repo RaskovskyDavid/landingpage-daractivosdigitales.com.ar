@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="100%" height="100%">
+  <rect width="240" height="80" rx="12" fill="#FFFFFF" />
+  <circle cx="32" cy="40" r="14" fill="#0077B6" opacity="0.14" />
+  <rect x="25" y="33" width="14" height="14" rx="3" fill="#0077B6" />
+  <text x="56" y="44" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#17253D" letter-spacing="0.4">CENCYS</text>
+</svg>
