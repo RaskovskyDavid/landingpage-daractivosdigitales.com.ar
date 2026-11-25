@@ -97,6 +97,55 @@ button { font-family: inherit; }
 @media (max-width: 768px) {
   .header-links { display: none !important; }
 }
+
+/* Marquee Trayectoria - Estilo Globant / Microsoft */
+@keyframes continuousScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 16px 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  animation: continuousScroll 32s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.logo-badge {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 14px 28px;
+  box-shadow: 0 2px 10px rgba(14, 23, 38, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  user-select: none;
+}
+
+.logo-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 23, 38, 0.08);
+  border-color: #CBD5E1;
+}
+
 </style>
 </head>
 <body>
@@ -390,133 +439,199 @@ button { font-family: inherit; }
 </section>
 
 <!-- ============ TRAYECTORIA ============ -->
-<section id="trayectoria" style="max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-direction: column; align-items: center; gap: 48px">
-  <div class="rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; max-width: 820px">
-    <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #2453FF">Experiencia Comprobada</p>
-    <h2 style="font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; font-weight: 700; color: #0E1726; letter-spacing: -0.02em">Más de 10 años en sistemas que no pueden caerse</h2>
-    <p style="font-size: 17px; line-height: 1.6; color: #3B4A63">Empresas e instituciones para las que trabajé como desarrollador de software y proyectos que respaldan mi trabajo.</p>
+<!-- ============ TRAYECTORIA (CARRUSEL CONTINUO ESTILO GLOBANT / MICROSOFT) ============ -->
+<section id="trayectoria" style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 80px; display: flex; flex-direction: column; align-items: center; gap: 32px">
+  <div class="rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; max-width: 800px">
+    <p style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #2453FF">Trayectoria &amp; Respaldo Profesional</p>
+    <h2 style="font-size: clamp(26px, 2.8vw, 36px); line-height: 1.2; font-weight: 700; color: #0E1726; letter-spacing: -0.02em; margin: 0">
+      Más de 10 años en sistemas que no pueden caerse
+    </h2>
+    <p style="font-size: 16px; line-height: 1.6; color: #3B4A63; margin: 0">
+      Experiencia comprobada como desarrollador en banca, industria, consultoría global y sector público.
+    </p>
   </div>
 
-  <div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
-    <!-- 1. Banco Galicia -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Banca &amp; Fintech</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Banco Galicia</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Senior Developer · Proyecto crítico de migración HSBC</span>
-      </div>
+  <!-- Marquee Continuo sin interrupción -->
+  <div class="marquee-container" aria-label="Empresas con las que trabajé">
+    <div class="marquee-track">
+      <!-- Set 1 -->
+
+    <!-- Accenture -->
+    <div class="logo-badge">
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 23px; font-weight: 700; letter-spacing: -0.03em; color: #17253D; display: inline-flex; align-items: center">
+        accenture<span style="color: #A100FF; font-weight: 900; margin-left: 2px">&gt;</span>
+      </span>
     </div>
 
-    <!-- 2. Accenture -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Consultoría Global</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Accenture</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Desarrollo y arquitectura de soluciones corporativas a gran escala</span>
-      </div>
+    <!-- Banco Galicia -->
+    <div class="logo-badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF5E00" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.02em; color: #17253D">
+        Banco Galicia
+      </span>
     </div>
 
-    <!-- 3. Papelera Tucumán -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Industria</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Papelera Tucumán</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Sistemas de control, procesos de planta e industria pesada</span>
-      </div>
+    <!-- Papelera Tucumán -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#0E4F7C" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="4"/>
+        <path d="M7 12h10M7 8h10M7 16h6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #17253D">
+        Papelera Tucumán
+      </span>
     </div>
 
-    <!-- 4. Complejo Alimenticio San Salvador -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Alimentos &amp; Logística</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Complejo Alimenticio San Salvador</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Sistemas de producción continua y automatización de procesos</span>
-      </div>
+    <!-- San Salvador Alimentos -->
+    <div class="logo-badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#16A34A" aria-hidden="true">
+        <path d="M12 2L3 9v11a2 2 0 002 2h14a2 2 0 002-2V9l-9-7z"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        San Salvador <span style="font-size: 13px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em">Alimentos</span>
+      </span>
     </div>
 
-    <!-- 5. New Alliance -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Internacional · EE. UU.</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">New Alliance</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Los Ángeles · Remoto · Software y operaciones digitales</span>
-      </div>
+    <!-- New Alliance USA -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#0284C7" aria-hidden="true">
+        <path d="M12 2l10 10-10 10L2 12z"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        New Alliance <span style="font-size: 12px; font-weight: 700; color: #0284C7; background: rgba(2,132,199,.10); padding: 2px 7px; border-radius: 4px; margin-left: 4px">USA</span>
+      </span>
     </div>
 
-    <!-- 6. Pixelario Desarrollo Web -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Desarrollo Web</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Pixelario Desarrollo Web</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Arquitectura de aplicaciones web y plataformas interactivas</span>
-      </div>
+    <!-- Pixelario Desarrollo Web -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#6366F1" aria-hidden="true">
+        <circle cx="7" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><circle cx="7" cy="17" r="4"/><circle cx="17" cy="17" r="4"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -0.01em; color: #17253D">
+        Pixelario <span style="font-size: 14px; font-weight: 500; color: #64748B">Web</span>
+      </span>
     </div>
 
-    <!-- 7. Cencys -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Tecnología Empresarial</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Cencys</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Sistemas corporativos e integración de datos</span>
-      </div>
+    <!-- Cencys -->
+    <div class="logo-badge">
+      <div style="width: 14px; height: 14px; background: #2563EB; border-radius: 3px"></div>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 21px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: #17253D">
+        Cencys
+      </span>
     </div>
 
-    <!-- 8. Ministerio de Educación de Tucumán -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Sector Público &amp; Educación</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Ministerio de Educación</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Referente de informática · Educación Superior y Artística</span>
-      </div>
+    <!-- Ministerio de Educación Tucumán -->
+    <div class="logo-badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#0284C7" aria-hidden="true">
+        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        Min. Educación <span style="font-size: 13px; font-weight: 600; color: #64748B">Tucumán</span>
+      </span>
     </div>
 
-    <!-- 9. Mandala Lab -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: rgba(36,83,255,.08); padding: 4px 10px; border-radius: 6px">Innovación Digital</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Mandala Lab</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Laboratorio de desarrollo de software y productos digitales</span>
-      </div>
+    <!-- Mandala Lab -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" stroke="#EA580C" stroke-width="2.5" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="4"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        Mandala Lab
+      </span>
     </div>
 
-    <!-- 10. Consultorio Dermatológico -->
-    <div class="rv card" style="background: #FFFFFF; border-radius: 18px; border: 1px solid #E3E8EF; box-shadow: 0 4px 16px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; transition: transform .3s, box-shadow .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0E7C66; background: rgba(14,124,102,.10); padding: 4px 10px; border-radius: 6px">Inteligencia Artificial · 2026</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #0E1726; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Consultorio Médico</strong>
-        <span style="font-size: 14px; color: #3B4A63; line-height: 1.5">Agente de IA automatizado: 20 turnos diarios por WhatsApp e Instagram</span>
-      </div>
+      <!-- Set 2 (Duplicado para loop infinito fluido) -->
+
+    <!-- Accenture -->
+    <div class="logo-badge">
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 23px; font-weight: 700; letter-spacing: -0.03em; color: #17253D; display: inline-flex; align-items: center">
+        accenture<span style="color: #A100FF; font-weight: 900; margin-left: 2px">&gt;</span>
+      </span>
     </div>
 
-    <!-- 11. Tu Empresa (Call to action card) -->
-    <div class="rv card" onclick="openContactModal(event)" style="background: linear-gradient(135deg, rgba(36,83,255,.04), rgba(36,83,255,.09)); border: 2px dashed #2453FF; border-radius: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 26px 24px; cursor: pointer; transition: transform .3s, background .3s">
-      <div style="display: flex; justify-content: space-between; align-items: center">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2453FF; background: #FFFFFF; padding: 4px 10px; border-radius: 6px">Próximo Caso</span>
-      </div>
-      <div>
-        <strong style="font-size: 22px; font-weight: 700; color: #142F99; display: block; margin-bottom: 6px; letter-spacing: -0.01em">Tu empresa</strong>
-        <span style="font-size: 14px; color: #0E1726; font-weight: 500; line-height: 1.5">El próximo sistema que construyamos juntos. Hacé click para empezar →</span>
-      </div>
+    <!-- Banco Galicia -->
+    <div class="logo-badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF5E00" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.02em; color: #17253D">
+        Banco Galicia
+      </span>
+    </div>
+
+    <!-- Papelera Tucumán -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#0E4F7C" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="4"/>
+        <path d="M7 12h10M7 8h10M7 16h6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #17253D">
+        Papelera Tucumán
+      </span>
+    </div>
+
+    <!-- San Salvador Alimentos -->
+    <div class="logo-badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#16A34A" aria-hidden="true">
+        <path d="M12 2L3 9v11a2 2 0 002 2h14a2 2 0 002-2V9l-9-7z"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        San Salvador <span style="font-size: 13px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.06em">Alimentos</span>
+      </span>
+    </div>
+
+    <!-- New Alliance USA -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#0284C7" aria-hidden="true">
+        <path d="M12 2l10 10-10 10L2 12z"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        New Alliance <span style="font-size: 12px; font-weight: 700; color: #0284C7; background: rgba(2,132,199,.10); padding: 2px 7px; border-radius: 4px; margin-left: 4px">USA</span>
+      </span>
+    </div>
+
+    <!-- Pixelario Desarrollo Web -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#6366F1" aria-hidden="true">
+        <circle cx="7" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><circle cx="7" cy="17" r="4"/><circle cx="17" cy="17" r="4"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -0.01em; color: #17253D">
+        Pixelario <span style="font-size: 14px; font-weight: 500; color: #64748B">Web</span>
+      </span>
+    </div>
+
+    <!-- Cencys -->
+    <div class="logo-badge">
+      <div style="width: 14px; height: 14px; background: #2563EB; border-radius: 3px"></div>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 21px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: #17253D">
+        Cencys
+      </span>
+    </div>
+
+    <!-- Ministerio de Educación Tucumán -->
+    <div class="logo-badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#0284C7" aria-hidden="true">
+        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        Min. Educación <span style="font-size: 13px; font-weight: 600; color: #64748B">Tucumán</span>
+      </span>
+    </div>
+
+    <!-- Mandala Lab -->
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" stroke="#EA580C" stroke-width="2.5" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="4"/>
+      </svg>
+      <span style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #17253D">
+        Mandala Lab
+      </span>
+    </div>
+
     </div>
   </div>
 </section>
