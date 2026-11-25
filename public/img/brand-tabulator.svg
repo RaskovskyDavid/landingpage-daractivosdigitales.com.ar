@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none">
+  <!-- Fondo base institucional -->
+  <rect width="36" height="36" rx="9" fill="#0B0D3A"/>
+  
+  <!-- Chasis / Ranura de la Máquina Tabuladora (Placa electromecánica inferior) -->
+  <rect x="5" y="21" width="26" height="10" rx="3" fill="#141852" stroke="#2453FF" stroke-width="1.2"/>
+  
+  <!-- Ranura de alimentación de tarjetas (Card Feed Throat) -->
+  <line x1="8" y1="23.5" x2="28" y2="23.5" stroke="#3DF5A1" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Diales / Contadores electromecánicos de conteo (Dials / Register Counters) -->
+  <circle cx="10" cy="27" r="1.5" fill="#3DF5A1"/>
+  <circle cx="14" cy="27" r="1.5" fill="#22D3EE"/>
+  <circle cx="18" cy="27" r="1.5" fill="#3DF5A1"/>
+  <circle cx="22" cy="27" r="1.5" fill="#22D3EE"/>
+  <circle cx="26" cy="27" r="1.5" fill="#3DF5A1"/>
+  
+  <!-- Tarjeta Perforada (Punched Card) ingresando a la máquina, con corte característico en la esquina superior derecha -->
+  <path d="M9 7h14l4 4v12.5H9V7z" fill="#FFFFFF" fill-opacity="0.95" stroke="#CBD5E1" stroke-width="0.8"/>
+  
+  <!-- Perforaciones de la tarjeta (Hollerith / 80-col rectangular punches) -->
+  <!-- Fila 1 -->
+  <rect x="11.5" y="10" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+  <rect x="15" y="10" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+  <rect x="20" y="10" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+  <rect x="23.5" y="10" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+
+  <!-- Fila 2 -->
+  <rect x="13" y="13" width="1.8" height="1.2" rx="0.3" fill="#2453FF"/>
+  <rect x="17" y="13" width="1.8" height="1.2" rx="0.3" fill="#2453FF"/>
+  <rect x="22" y="13" width="1.8" height="1.2" rx="0.3" fill="#2453FF"/>
+
+  <!-- Fila 3 -->
+  <rect x="11.5" y="16" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+  <rect x="15.5" y="16" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+  <rect x="19" y="16" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+  <rect x="23.5" y="16" width="1.8" height="1.2" rx="0.3" fill="#0B0D3A"/>
+
+  <!-- Fila 4 (cerca de la ranura sensora) -->
+  <rect x="13.5" y="19" width="1.8" height="1.2" rx="0.3" fill="#14B8A6"/>
+  <rect x="17.5" y="19" width="1.8" height="1.2" rx="0.3" fill="#14B8A6"/>
+  <rect x="21.5" y="19" width="1.8" height="1.2" rx="0.3" fill="#14B8A6"/>
+</svg>
