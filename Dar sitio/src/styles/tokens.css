@@ -1,0 +1,89 @@
+/* DAR Activos Digitales — tokens del sistema visual (Portada B) */
+:root {
+  /* Fondos */
+  --bg-page: #F4FAFD;
+  --bg-section-tint: #E8F3FA;
+  --bg-footer: #F2F2F2;
+  --surface: #FFFFFF;
+  --dark-hero: #0B0D3A;
+  --dark-band: #14166B;
+
+  /* Texto */
+  --text: #17253D;
+  --heading: #0E1726;
+  --muted: #3B4A63;
+  --footer-title: #616161;
+  --on-dark: #F4FAFD;
+  --on-dark-muted: #D8DEF5;
+
+  /* Acento propio */
+  --primary: #2453FF;
+  --primary-hover: #1A3FCC;
+  --primary-strong: #142F99;
+  --pill-bg: rgba(36, 83, 255, 0.10);
+  --btn-soft: #B9C8FF;
+  --btn-soft-hover: #D4DEFF;
+
+  /* Neón (arte propio) */
+  --neon-green: #3DF5A1;
+  --neon-cyan: #22D3EE;
+  --neon-yellow: #FACC15;
+  --neon-indigo: #6C7BFF;
+  --neon-violet: #A78BFA;
+
+  /* Bordes */
+  --border: #E3E8EF;
+  --border-input: #C9D2DE;
+  --border-accordion: #D5DDE8;
+
+  /* Tipografía */
+  --font: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --fs-h1: clamp(32px, 3.6vw, 48px);
+  --fs-h2: clamp(30px, 3.4vw, 44px);
+  --fs-h3: 21px;
+  --fs-body: 16px;
+  --lh-body: 24px;
+  --fs-eyebrow: 13px;
+  --fw-heading: 500;
+  --fw-ui: 600;
+
+  /* Formas */
+  --r-btn: 8px;
+  --r-card: 24px;
+  --r-inset: 16px;
+  --r-pill: 999px;
+  --shadow-card: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08), 0 8px 24px rgba(14,23,38,.06);
+  --shadow-card-hover: 0 0 2px rgba(0,0,0,.12), 0 18px 40px rgba(14,23,38,.12);
+  --shadow-float: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.10);
+
+  /* Layout */
+  --container: 1280px;
+  --gutter: 32px;
+  --section-y: 140px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --t-reveal: 1.2s;
+  --t-card: .6s;
+  --t-zoom: .38s;
+  --t-pill: .125s;
+  --t-btn: .2s;
+}
+
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-ui);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Aparición al hacer scroll: solo se oculta cuando el script agregó .rvon */
+.rv { transition: opacity var(--t-reveal) ease-in-out, transform var(--t-reveal) ease-in-out; }
+.rvon .rv:not(.in) { opacity: 0; transform: translateY(28px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rvon .rv:not(.in) { transform: none; }
+  .rv { transition: opacity .6s; }
+  *, *::before, *::after { animation: none !important; }
+}

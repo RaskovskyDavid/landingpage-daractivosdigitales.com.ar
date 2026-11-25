@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cómo armé un agente de turnos con n8n e Instagram</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#0B0B0C;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol{margin:0}
+a{color:#2453FF}a:hover{color:#1A3FCC}
+</style>
+</helmet>
+<div style="width: 100%; background: #FFFFFF">
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid #E6E6E3">
+<nav aria-label="Principal" style="max-width: 1180px; margin: 0 auto; padding: 0 24px; min-height: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 8px; text-decoration: none; color: #0B0B0C"><span style="font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.02em">DAR</span><span style="font-size: 14px; color: #5C5F66">Activos Digitales</span></a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 14px">
+<a href="Automatizaciones.dc.html" style="color: #0B0B0C; text-decoration: none">Automatizaciones con IA</a>
+<a href="Modernizacion.dc.html" style="color: #0B0B0C; text-decoration: none">Sistemas .NET</a>
+<a href="Blog.dc.html" style="color: #2453FF; text-decoration: none; font-weight: 500">Blog</a>
+<a href="Main.dc.html" style="color: #0B0B0C; text-decoration: none">Sobre mí</a>
+<a href="Main.dc.html" style="background: #0B0B0C; color: #FFFFFF; text-decoration: none; padding: 0 16px; min-height: 36px; border-radius: 999px; font-weight: 500; display: inline-flex; align-items: center">Contacto</a>
+</div>
+</nav>
+</header>
+
+<article style="max-width: 760px; margin: 0 auto; padding: 72px 24px 64px; display: flex; flex-direction: column; gap: 28px">
+<p style="font-size: 13px; color: #5C5F66"><a href="Blog.dc.html" style="color: #5C5F66; text-decoration: none">Blog</a> › Agentes · Caso real</p>
+<h1 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(36px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 600">Cómo armé un agente de turnos con n8n e Instagram para un consultorio.</h1>
+<div style="display: flex; align-items: center; gap: 14px; padding-bottom: 24px; border-bottom: 1px solid #E6E6E3">
+<div role="img" aria-label="Foto de David Ariel Raskovsky (a reemplazar)" style="width: 48px; height: 48px; border-radius: 999px; background: #F4F4F2; border: 1px dashed #BDBDB8; flex: 0 0 48px"></div>
+<div style="display: flex; flex-direction: column; gap: 2px; font-size: 14px">
+<a href="Main.dc.html" style="color: #0B0B0C; font-weight: 600; text-decoration: none">David Ariel Raskovsky</a>
+<span style="color: #5C5F66">Ingeniero en Informática · Publicado el [fecha] · Actualizado el [fecha]</span>
+</div>
+</div>
+
+<aside aria-label="Respuesta corta" style="background: #F4F4F2; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2453FF">Respuesta corta</p>
+<p style="font-size: 18px; line-height: 1.6">En junio de 2026 construí un agente que atendía los mensajes de Instagram de un consultorio dermatológico y reservaba turnos en su Google Calendar. Corría sobre un servidor n8n propio, conectado a la API de Meta y a un agente conversacional de Google. Atendía unas 20 consultas por día sin intervención, hasta que el consultorio cerró.</p>
+</aside>
+
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: 30px; letter-spacing: -0.02em; font-weight: 600; padding-top: 16px">El problema</h2>
+<p style="font-size: 18px; line-height: 1.7; color: #23262C">Los pacientes escribían por Instagram para pedir turno, preguntar precios o confirmar horarios. Responder llevaba tiempo de atención todos los días, y los mensajes que llegaban fuera de horario quedaban sin respuesta hasta el día siguiente. [Agregá un detalle concreto: cuántos mensajes, quién los respondía antes.]</p>
+
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: 30px; letter-spacing: -0.02em; font-weight: 600; padding-top: 16px">La arquitectura</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px">
+<span style="border: 1px solid #DADAD6; border-radius: 12px; padding: 12px 14px">Instagram · API de Meta</span>
+<span aria-hidden="true" style="color: #8C8F96">→</span>
+<span style="border: 2px solid #2453FF; border-radius: 12px; padding: 11px 14px; color: #2453FF; font-weight: 600">n8n (servidor propio)</span>
+<span aria-hidden="true" style="color: #8C8F96">→</span>
+<span style="background: #0B0B0C; color: #F4F4F2; border-radius: 12px; padding: 12px 14px">Agente conversacional de Google</span>
+<span aria-hidden="true" style="color: #8C8F96">→</span>
+<span style="border: 1px solid #DADAD6; border-radius: 12px; padding: 12px 14px">Google Calendar compartido</span>
+</div>
+<ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; line-height: 1.65; color: #23262C">
+<li><strong>Entrada:</strong> los mensajes de Instagram llegaban a n8n por la API de Meta.</li>
+<li><strong>Conversación:</strong> un agente de Google respondía con la información del consultorio.</li>
+<li><strong>Reserva:</strong> el turno se creaba en el calendario que ya usaba el consultorio.</li>
+<li>[Cómo evitabas turnos superpuestos y cuándo derivaba a una persona.]</li>
+</ul>
+
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: 30px; letter-spacing: -0.02em; font-weight: 600; padding-top: 16px">Qué funcionó</h2>
+<p style="font-size: 18px; line-height: 1.7; color: #23262C">El agente atendía unas 20 consultas por día sin que nadie interviniera. [Completá con lo que observaste: tiempos de respuesta, tipo de consultas, costo mensual medido.]</p>
+
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: 30px; letter-spacing: -0.02em; font-weight: 600; padding-top: 16px">Qué cambiaría hoy</h2>
+<p style="font-size: 18px; line-height: 1.7; color: #23262C">[Dos o tres decisiones que tomarías distinto. Por ejemplo, qué resolverías con reglas fijas antes de pasar por la IA.]</p>
+
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: 30px; letter-spacing: -0.02em; font-weight: 600; padding-top: 16px">Por qué ya no está activo</h2>
+<p style="font-size: 18px; line-height: 1.7; color: #23262C">El consultorio cerró y el agente se desactivó con él. La arquitectura sigue siendo la base de los agentes de turnos que ofrezco hoy.</p>
+
+<div style="border-top: 1px solid #E6E6E3; padding-top: 28px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div role="img" aria-label="Foto de David Ariel Raskovsky (a reemplazar)" style="width: 72px; height: 72px; border-radius: 999px; background: #F4F4F2; border: 1px dashed #BDBDB8; flex: 0 0 72px"></div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<strong style="font-size: 18px; font-weight: 600">David Ariel Raskovsky</strong>
+<p style="font-size: 16px; line-height: 1.6; color: #3A3D44">Ingeniero en Informática con más de 10 años en C# y .NET, los últimos en Banco Galicia. Construye agentes con IA y mantiene sistemas .NET desde Tucumán, Argentina.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 15px"><a href="https://www.linkedin.com/in/[usuario]" style="text-decoration: none">LinkedIn ›</a><a href="https://github.com/[usuario]" style="text-decoration: none">GitHub ›</a></div>
+</div>
+</div>
+</article>
+
+<section style="padding: 0 12px 12px">
+<div style="background: #0B0B0C; color: #F4F4F2; border-radius: 28px; max-width: 1180px; margin: 0 auto; padding: 64px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #C8F55A">Servicio relacionado</p>
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 600">¿Querés un agente así para tu negocio?</h2>
+</div>
+<a href="Automatizaciones.dc.html" style="background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 24px; min-height: 50px; border-radius: 999px; font-weight: 500; font-size: 17px; display: inline-flex; align-items: center">Ver automatizaciones con IA →</a>
+</div>
+</section>
+
+<footer style="background: #F4F4F2; color: #5C5F66; font-size: 13px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 40px 24px 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px">
+<span><strong style="color: #0B0B0C">DAR Activos Digitales</strong> · Ing. David Ariel Raskovsky · Tucumán, Argentina</span>
+<span>© 2026</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3400}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

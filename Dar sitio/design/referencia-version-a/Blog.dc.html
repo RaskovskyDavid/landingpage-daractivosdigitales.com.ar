@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Blog — Notas de ingeniería</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#0B0B0C;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol{margin:0}
+a{color:#2453FF}a:hover{color:#1A3FCC}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.up{animation:up .9s cubic-bezier(.2,.7,.2,1) both}.d1{animation-delay:.12s}.d2{animation-delay:.24s}
+.lift{transition:transform .35s cubic-bezier(.2,.7,.2,1)}.lift:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 100%; background: #FFFFFF">
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid #E6E6E3">
+<nav aria-label="Principal" style="max-width: 1180px; margin: 0 auto; padding: 0 24px; min-height: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 8px; text-decoration: none; color: #0B0B0C"><span style="font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.02em">DAR</span><span style="font-size: 14px; color: #5C5F66">Activos Digitales</span></a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 14px">
+<a href="Automatizaciones.dc.html" style="color: #0B0B0C; text-decoration: none">Automatizaciones con IA</a>
+<a href="Modernizacion.dc.html" style="color: #0B0B0C; text-decoration: none">Sistemas .NET</a>
+<a href="Blog.dc.html" aria-current="page" style="color: #2453FF; text-decoration: none; font-weight: 500">Blog</a>
+<a href="Main.dc.html" style="color: #0B0B0C; text-decoration: none">Sobre mí</a>
+<a href="Main.dc.html" style="background: #0B0B0C; color: #FFFFFF; text-decoration: none; padding: 0 16px; min-height: 36px; border-radius: 999px; font-weight: 500; display: inline-flex; align-items: center">Contacto</a>
+</div>
+</nav>
+</header>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 96px 24px 48px; display: flex; flex-direction: column; gap: 22px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5C5F66">Blog</p>
+<h1 class="up" style="font-family: 'Inter Tight', sans-serif; font-size: clamp(48px, 7vw, 96px); line-height: 0.98; letter-spacing: -0.045em; font-weight: 600">Notas de ingeniería.</h1>
+<p style="font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; color: #3A3D44; max-width: 720px">Lo que aprendo construyendo agentes con IA y manteniendo sistemas .NET, con arquitectura, costos y errores reales. Escrito por David Ariel Raskovsky.</p>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 0 24px 48px">
+<a href="Articulo.dc.html" class="up d1 lift" style="background: #0B0B0C; color: #F4F4F2; border-radius: 28px; padding: 56px 40px; text-decoration: none; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end">
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #C8F55A">Destacado · Agentes · Caso real</span>
+<span style="font-family: 'Inter Tight', sans-serif; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 600">Cómo armé un agente de turnos con n8n e Instagram para un consultorio.</span>
+<span style="font-size: 17px; line-height: 1.55; color: #C7C9CE; max-width: 640px">Arquitectura, decisiones y lo que cambiaría, de un agente que atendió unas 20 consultas por día.</span>
+</div>
+<span style="flex: 0 0 auto; color: #8FB0FF; font-size: 17px; font-weight: 500">Leer la nota →</span>
+</a>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 24px 24px 120px; display: flex; flex-direction: column; gap: 28px">
+<div role="group" aria-label="Filtrar por tema" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ chips }}" as="chip" hint-placeholder-count="5">
+<button type="button" onClick="{{ chip.pick }}" aria-pressed="{{ chip.pressed }}" style="{{ chip.style }}">{{ chip.label }}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<sc-for list="{{ visible }}" as="post" hint-placeholder-count="6">
+<a href="{{ post.href }}" class="lift" style="flex: 1 1 320px; min-width: 0; background: #F4F4F2; border-radius: 22px; padding: 30px; text-decoration: none; color: #0B0B0C; display: flex; flex-direction: column; gap: 14px; min-height: 230px; box-sizing: border-box">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2453FF">{{ post.cat }}</span>
+<span style="font-family: 'Inter Tight', sans-serif; font-size: 23px; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em">{{ post.title }}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #3A3D44">{{ post.summary }}</span>
+<span style="margin-top: auto; color: #2453FF; font-size: 15px">Leer →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<footer style="background: #F4F4F2; color: #5C5F66; font-size: 13px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 40px 24px 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px">
+<span><strong style="color: #0B0B0C">DAR Activos Digitales</strong> · Ing. David Ariel Raskovsky · Tucumán, Argentina</span>
+<div style="display: flex; flex-wrap: wrap; gap: 20px"><a href="https://www.linkedin.com/in/[usuario]" style="color: #3A3D44; text-decoration: none">LinkedIn</a><a href="https://github.com/[usuario]" style="color: #3A3D44; text-decoration: none">GitHub</a><span>RSS</span><span>© 2026</span></div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2300}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { cat: 'Todas' };
+}
+renderVals() {
+const posts = [
+{ cat: 'Agentes', title: 'Cómo armé un agente de turnos con n8n e Instagram para un consultorio', summary: 'Arquitectura, decisiones y lo que cambiaría.', href: 'Articulo.dc.html' },
+{ cat: '.NET', title: 'Fase 0: por qué conviene pagar un diagnóstico antes de tocar un sistema .NET', summary: 'Qué se entrega, cuánto dura y cuándo no hace falta.', href: 'Blog.dc.html' },
+{ cat: 'Costos', title: 'Cuánto cuesta operar un bot de WhatsApp: mensajes, IA y servidor', summary: 'Las tres partes de la factura mensual y cómo estimarlas.', href: 'Blog.dc.html' },
+{ cat: '.NET', title: 'Web Forms hoy: mantener, envolver o migrar', summary: 'Criterios para decidir sin reescribir todo.', href: 'Blog.dc.html' },
+{ cat: 'Código con IA', title: 'Revisar código escrito por IA: los errores que más encuentro', summary: 'Lo que aparece seguido cuando trabajo con agentes de programación.', href: 'Blog.dc.html' },
+{ cat: 'Agentes', title: 'Reglas fijas antes que IA: cómo diseño un agente predecible', summary: 'Por qué no todo mensaje tiene que pasar por el modelo.', href: 'Blog.dc.html' }
+];
+const cats = ['Todas', 'Agentes', '.NET', 'Costos', 'Código con IA'];
+const cur = this.state.cat;
+const on = 'min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid #0B0B0C; background: #0B0B0C; color: #FFFFFF; font: inherit; font-size: 14px; cursor: pointer';
+const off = 'min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid #DADAD6; background: #FFFFFF; color: #0B0B0C; font: inherit; font-size: 14px; cursor: pointer';
+return {
+chips: cats.map((c) => ({ label: c, pressed: c === cur ? 'true' : 'false', style: c === cur ? on : off, pick: () => this.setState({ cat: c }) })),
+visible: cur === 'Todas' ? posts : posts.filter((p) => p.cat === cur)
+};
+}
+}
+</script>
+</body>
+</html>

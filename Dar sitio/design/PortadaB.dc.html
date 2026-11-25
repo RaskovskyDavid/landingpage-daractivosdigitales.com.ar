@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>DAR Activos Digitales — Portada B (brief corporativo)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F4FAFD;color:#17253D;font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol{margin:0}
+a{color:#142F99}a:hover{color:#2453FF}
+.btn{transition:background-color .2s,border-color .2s}.btn:hover{background-color:#1A3FCC!important}
+.btn-soft:hover{background-color:#D4DEFF!important}
+.btn-line:hover{background-color:rgba(185,200,255,.14)!important}
+.alink{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#142F99;font-weight:600;font-size:15px}
+.alink:hover .sq{background:#1A3FCC}
+.sq{width:36px;height:36px;border-radius:6px;background:#2453FF;display:inline-flex;align-items:center;justify-content:center;flex:0 0 36px;transition:background-color .2s}
+.card{transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s}.card:hover{transform:translateY(-6px);box-shadow:0 0 2px rgba(0,0,0,.12),0 18px 40px rgba(14,23,38,.12)!important}
+.zoom{transition:transform .38s ease-out}.card:hover .zoom{transform:scale(1.04)}
+.pill{transition:background-color .125s ease-in-out,color .125s ease-in-out}
+.rvon .rv:not(.in){opacity:0;transform:translateY(28px)}
+.rv{transition:opacity 1.2s ease-in-out,transform 1.2s ease-in-out}
+@keyframes draw{from{stroke-dashoffset:1400}to{stroke-dashoffset:0}}
+@keyframes glow{0%,100%{opacity:1}50%{opacity:.55}}
+.neon path{stroke-dasharray:1400;animation:draw 2.4s cubic-bezier(.2,.7,.2,1) both,glow 7s ease-in-out 2.6s infinite}
+.neon path:nth-child(2){animation-delay:.25s,2.9s}.neon path:nth-child(3){animation-delay:.5s,3.2s}.neon path:nth-child(4){animation-delay:.75s,3.5s}
+.paused *{animation-play-state:paused!important}
+@keyframes drift{to{background-position:240px 120px}}
+.texture{animation:drift 30s linear infinite}
+.subnav::-webkit-scrollbar,.pills::-webkit-scrollbar{display:none}
+@media (prefers-reduced-motion: reduce){.rvon .rv:not(.in){transform:none}.rv{transition:opacity .6s}.neon path,.texture{animation:none!important;stroke-dasharray:none}.card,.zoom{transition:none}}
+</style>
+</helmet>
+<div style="width: 100%; background: #F4FAFD; position: relative">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #E3E8EF">
+<nav aria-label="Principal" style="max-width: 1280px; margin: 0 auto; padding: 0 32px; min-height: 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
+<a href="PortadaB.dc.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0E1726">
+<span aria-hidden="true" style="width: 26px; height: 26px; border-radius: 7px; background: #0B0D3A; display: inline-flex; align-items: center; justify-content: center; color: #8CF5C4; font-weight: 700; font-size: 13px">D</span>
+<span style="font-weight: 600; font-size: 17px">DAR</span>
+<span aria-hidden="true" style="width: 1px; height: 22px; background: #C9D2DE"></span>
+<span style="font-weight: 500; font-size: 16px">Activos Digitales</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 14px; margin-left: auto">
+<a href="Automatizaciones.dc.html" style="color: #17253D; text-decoration: none">Servicios</a>
+<a href="Articulo.dc.html" style="color: #17253D; text-decoration: none">Casos</a>
+<a href="Blog.dc.html" style="color: #17253D; text-decoration: none">Blog</a>
+<a href="#contacto" style="color: #17253D; text-decoration: none">Contacto</a>
+<a href="#contacto" class="btn" style="background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 16px; min-height: 36px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center">Solicitá tu app</a>
+<a href="https://wa.me/[numero]" style="border: 1px solid #0E1726; color: #0E1726; text-decoration: none; padding: 0 14px; min-height: 36px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center">WhatsApp</a>
+</div>
+</nav>
+</header>
+
+<section aria-label="Presentación" style="background: #0B0D3A; color: #F4FAFD; position: relative; overflow: hidden">
+<div class="{{ heroClass }}" aria-hidden="true" style="position: absolute; right: -40px; top: 0; bottom: 0; width: min(56%, 720px); pointer-events: none">
+<svg class="neon" viewBox="0 0 600 720" preserveAspectRatio="xMaxYMid slice" style="width: 100%; height: 100%; display: block">
+<defs><filter id="nglow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<g filter="url(#nglow)" fill="none" stroke-linecap="round">
+<path d="M640 120 H420 Q330 120 330 210 V760" stroke="#6C7BFF" stroke-width="14"/>
+<path d="M640 180 H450 Q380 180 380 250 V760" stroke="#22D3EE" stroke-width="14"/>
+<path d="M640 240 H480 Q430 240 430 290 V760" stroke="#3DF5A1" stroke-width="14"/>
+<path d="M640 300 H510 Q480 300 480 330 V760" stroke="#FACC15" stroke-width="14"/>
+</g>
+</svg>
+</div>
+<button type="button" onClick="{{ togglePause }}" aria-label="{{ pauseLabel }}" style="position: absolute; top: 16px; left: 16px; width: 32px; height: 32px; border-radius: 8px; border: 0; background: #B9C8FF; color: #0B0D3A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2">
+<sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}">
+<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 2 L12 7 L3 12 Z" fill="currentColor"/></svg>
+</sc-if>
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="8" y="2" width="3" height="10" rx="1" fill="currentColor"/></svg>
+</sc-if>
+</button>
+<div style="max-width: 1280px; margin: 0 auto; padding: 96px 32px 112px; position: relative; min-height: 560px; box-sizing: border-box; display: flex; align-items: center">
+<div style="max-width: 600px; display: flex; flex-direction: column; gap: 24px">
+<p class="rv" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #B9C8FF">DAR Activos Digitales · Desarrollamos tu app</p>
+<h1 class="rv" style="font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; font-weight: 500; letter-spacing: -0.01em; color: #FFFFFF; transition-delay: .05s">Tu negocio vende y atiende, incluso a las 3 de la mañana.</h1>
+<p class="rv" style="font-size: 17px; line-height: 1.6; color: #D8DEF5; transition-delay: .1s">Una página web para que te encuentren, una app para tus clientes o tu equipo, una tienda digital que cobra sola o un chatbot que te ayuda a cerrar ventas mientras dormís. Nos contás el problema con tus palabras y lo convertimos en software que funciona. DAR Activos Digitales es el estudio del ingeniero David Ariel Raskovsky, con más de 10 años desarrollando sistemas para bancos e industria.</p>
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 12px; transition-delay: .15s">
+<a href="#contacto" class="btn-soft" style="background: #B9C8FF; color: #0B0D3A; text-decoration: none; padding: 0 20px; min-height: 48px; border-radius: 8px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; transition: background-color .2s">Solicitá tu app</a>
+<a href="#servicios" class="btn-line" style="border: 2px solid #B9C8FF; color: #FFFFFF; text-decoration: none; padding: 0 20px; min-height: 48px; box-sizing: border-box; border-radius: 8px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; transition: background-color .2s">Ver qué podemos hacer</a>
+</div>
+</div>
+</div>
+</section>
+
+<div style="position: sticky; top: 24px; z-index: 20; max-width: 1280px; margin: 24px auto 0; padding: 0 32px; box-sizing: border-box">
+<nav aria-label="En esta página" class="subnav" style="background: #FFFFFF; border-radius: 16px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.10); padding: 10px 12px 10px 24px; display: flex; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none">
+<sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+<a href="{{ s.href }}" aria-current="{{ s.current }}" style="{{ s.style }}">{{ s.label }}</a>
+</sc-for>
+<a href="#contacto" class="btn" style="margin-left: auto; flex: 0 0 auto; background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 16px; min-height: 40px; border-radius: 8px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center">Solicitá tu app</a>
+</nav>
+</div>
+
+<section id="destacados" style="max-width: 1280px; margin: 0 auto; padding: 96px 32px 120px; display: flex; flex-direction: column; gap: 48px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Destacados</p>
+<h2 style="font-size: clamp(28px, 3vw, 40px); line-height: 1.2; font-weight: 500; color: #0E1726">Lo más reciente en DAR Activos Digitales</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<article class="rv card" style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 8px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; transition-delay: 25ms">
+<div style="border-radius: 16px; overflow: hidden; height: 168px">
+<div class="zoom" aria-hidden="true" style="height: 100%; background-color: #0B0D3A; background-image: linear-gradient(rgba(108,123,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(108,123,255,.14) 1px, transparent 1px); background-size: 28px 28px; position: relative">
+<div style="position: absolute; right: -30px; bottom: -30px; width: 190px; height: 150px; border: 6px solid #3DF5A1; border-radius: 28px"></div>
+<div style="position: absolute; right: -10px; bottom: -10px; width: 140px; height: 104px; border: 6px solid #22D3EE; border-radius: 22px"></div>
+<div style="position: absolute; right: 12px; bottom: 12px; width: 92px; height: 60px; background: #1B8F6A; border-radius: 14px; opacity: .8"></div>
+</div>
+</div>
+<div style="padding: 24px 24px 28px; display: flex; flex-direction: column; gap: 14px; flex: 1">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Caso real</p>
+<h3 style="font-size: 21px; line-height: 1.3; font-weight: 600; color: #0E1726">Un agente de IA atendió unas 20 consultas por día en un consultorio</h3>
+<p style="font-size: 16px; line-height: 24px; color: #17253D">Instagram, n8n y Google Calendar: cómo se armó el agente de turnos y qué cambiaría hoy.</p>
+<a href="Articulo.dc.html" class="alink" style="margin-top: auto"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Leer el caso</a>
+</div>
+</article>
+<article class="rv card" style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 8px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; transition-delay: 50ms">
+<div style="border-radius: 16px; overflow: hidden; height: 168px">
+<div class="zoom" aria-hidden="true" style="height: 100%; background-color: #0B0D3A; background-image: linear-gradient(rgba(108,123,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(108,123,255,.14) 1px, transparent 1px); background-size: 28px 28px; position: relative">
+<div style="position: absolute; right: -30px; bottom: -30px; width: 190px; height: 150px; border: 6px solid #FACC15; border-radius: 28px"></div>
+<div style="position: absolute; right: -10px; bottom: -10px; width: 140px; height: 104px; border: 6px solid #FDE68A; border-radius: 22px"></div>
+<div style="position: absolute; right: 12px; bottom: 12px; width: 92px; height: 60px; background: #B4880A; border-radius: 14px; opacity: .85"></div>
+</div>
+</div>
+<div style="padding: 24px 24px 28px; display: flex; flex-direction: column; gap: 14px; flex: 1">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Para empresas</p>
+<h3 style="font-size: 21px; line-height: 1.3; font-weight: 600; color: #0E1726">¿Tenés un sistema que nadie se anima a tocar? Empezá por un diagnóstico</h3>
+<p style="font-size: 16px; line-height: 24px; color: #17253D">Precio fijo: te decimos qué hay, qué conviene hacer y cuánto cuesta, antes de cambiar nada.</p>
+<div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 12px 24px">
+<a href="Modernizacion.dc.html" class="alink"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ver el diagnóstico</a>
+<a href="Blog.dc.html" class="alink"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Leer la nota</a>
+</div>
+</div>
+</article>
+<article class="rv card" style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 8px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.08), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; transition-delay: 75ms">
+<div style="border-radius: 16px; overflow: hidden; height: 168px">
+<div class="zoom" aria-hidden="true" style="height: 100%; background-color: #0B0D3A; background-image: linear-gradient(rgba(108,123,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(108,123,255,.14) 1px, transparent 1px); background-size: 28px 28px; position: relative">
+<div style="position: absolute; right: -30px; bottom: -30px; width: 190px; height: 150px; border: 6px solid #A78BFA; border-radius: 28px"></div>
+<div style="position: absolute; right: -10px; bottom: -10px; width: 140px; height: 104px; border: 6px solid #6C7BFF; border-radius: 22px"></div>
+<div style="position: absolute; right: 12px; bottom: 12px; width: 92px; height: 60px; background: #5B3FD0; border-radius: 14px; opacity: .85"></div>
+</div>
+</div>
+<div style="padding: 24px 24px 28px; display: flex; flex-direction: column; gap: 14px; flex: 1">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Blog</p>
+<h3 style="font-size: 21px; line-height: 1.3; font-weight: 600; color: #0E1726">Cuánto cuesta operar un bot de WhatsApp: mensajes, IA y servidor</h3>
+<p style="font-size: 16px; line-height: 24px; color: #17253D">Las tres partes de la factura mensual y cómo estimarlas antes de empezar.</p>
+<a href="Blog.dc.html" class="alink" style="margin-top: auto"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Leer la nota</a>
+</div>
+</article>
+</div>
+</section>
+
+<section id="soluciones" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 140px; display: flex; flex-direction: column; gap: 40px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Soluciones</p>
+<h2 style="font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; font-weight: 500; color: #0E1726">¿Qué necesita tu negocio? Empecemos por ahí</h2>
+</div>
+<div role="tablist" aria-label="Categorías de soluciones" class="pills" style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px">
+<sc-for list="{{ pills }}" as="p" hint-placeholder-count="4">
+<button type="button" role="tab" class="pill" aria-selected="{{ p.selected }}" onClick="{{ p.pick }}" style="{{ p.style }}">{{ p.label }}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0; max-width: 440px; display: flex; flex-direction: column">
+<sc-for list="{{ items }}" as="it" hint-placeholder-count="3">
+<div style="{{ it.rowStyle }}">
+<button type="button" onClick="{{ it.pick }}" aria-expanded="{{ it.expanded }}" style="width: 100%; background: none; border: 0; padding: 0; text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 16px; font: inherit; font-size: 19px; font-weight: 600; color: #0E1726; cursor: pointer; min-height: 44px">{{ it.title }}<span aria-hidden="true" style="font-size: 18px; color: #3B4A63">{{ it.sign }}</span></button>
+<sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 10px">
+<p style="font-size: 16px; line-height: 24px; color: #17253D">{{ it.desc }}</p>
+<a href="{{ it.href }}" style="color: #142F99; font-weight: 600; font-size: 15px">{{ it.cta }}</a>
+</div>
+</sc-if>
+</div>
+</sc-for>
+<a href="Automatizaciones.dc.html" class="alink" style="margin-top: 28px"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ver todas las soluciones</a>
+</div>
+<div class="rv" style="flex: 1.6 1 460px; min-width: 0; border-radius: 24px; padding: 24px; background-color: #2453FF; background-image: radial-gradient(rgba(255,255,255,.28) 1.4px, transparent 1.6px); background-size: 12px 12px">
+<div style="position: relative; height: 400px">
+<sc-for list="{{ visuals }}" as="v" hint-placeholder-count="3">
+<div aria-hidden="{{ v.hidden }}" style="{{ v.style }}">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">{{ v.kicker }}</p>
+<p style="font-size: 26px; line-height: 1.2; font-weight: 500; color: #0E1726">{{ v.title }}</p>
+<ol style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; margin-top: 8px">
+<sc-for list="{{ v.lines }}" as="ln" hint-placeholder-count="3">
+<li style="display: flex; align-items: center; gap: 14px; background: #F4FAFD; border: 1px solid #E3E8EF; border-radius: 12px; padding: 14px 16px; font-size: 15px; color: #17253D"><span style="width: 28px; height: 28px; border-radius: 999px; background: rgba(36,83,255,.10); color: #142F99; font-weight: 600; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 28px">{{ ln.n }}</span>{{ ln.t }}</li>
+</sc-for>
+</ol>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section id="servicios" style="background: #E8F3FA">
+<div style="max-width: 1280px; margin: 0 auto; padding: 120px 32px 140px; display: flex; flex-direction: column; gap: 40px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Qué desarrollamos</p>
+<h2 style="font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; font-weight: 500; color: #0E1726">Tu web, tu app, tu tienda o tu chatbot</h2>
+</div>
+<article class="rv card" style="border-radius: 24px; overflow: hidden; position: relative; min-height: 380px; background-color: #0A4A5C; background-image: radial-gradient(rgba(255,255,255,.22) 1.4px, transparent 1.6px); background-size: 14px 14px; display: flex; align-items: flex-end; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.08)">
+<div class="zoom" aria-hidden="true" style="position: absolute; inset: 0">
+<div style="position: absolute; right: 8%; top: -60px; width: 300px; height: 300px; border-radius: 999px; background: radial-gradient(circle at 32% 28%, #E0F7FF 0%, #7DD3FC 22%, #2453FF 62%, #0B0D3A 100%)"></div>
+<div style="position: absolute; right: 30%; bottom: -40px; width: 150px; height: 150px; border-radius: 999px; background: radial-gradient(circle at 32% 28%, #F0FFF8 0%, #6EE7B7 25%, #0E7C66 70%, #06302A 100%)"></div>
+<div style="position: absolute; right: 4%; bottom: 40px; width: 220px; height: 70px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, #EDE9FE 0%, #A78BFA 35%, #4C1D95 100%); transform: rotate(-18deg)"></div>
+</div>
+<div style="position: relative; padding: 40px; max-width: 620px; display: flex; flex-direction: column; gap: 14px; color: #FFFFFF">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9FE8D4">El más pedido</p>
+<h3 style="font-size: 30px; line-height: 1.2; font-weight: 500">Un chatbot que te ayuda a cerrar ventas a las 3 de la mañana</h3>
+<p style="font-size: 16px; line-height: 24px; color: #DDF3F8">Responde por WhatsApp o Instagram, arma el pedido y le manda al cliente el link de pago mientras vos dormís. Precio fijo, sin sorpresas.</p>
+<a href="#contacto" class="btn-soft" style="align-self: flex-start; background: #B9C8FF; color: #0B0D3A; text-decoration: none; padding: 0 18px; min-height: 44px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; transition: background-color .2s">Solicitá tu chatbot</a>
+</div>
+</article>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<sc-for list="{{ products }}" as="pr" hint-placeholder-count="6">
+<article class="rv card" style="{{ pr.style }}">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #E3E8EF; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; color: #2453FF">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ pr.icon }}"/></svg>
+</span>
+<h3 style="font-size: 20px; line-height: 1.3; font-weight: 600; color: #0E1726">{{ pr.title }}</h3>
+<p style="font-size: 16px; line-height: 24px; color: #17253D">{{ pr.desc }}</p>
+<a href="{{ pr.href }}" style="margin-top: auto; color: #142F99; font-weight: 600; font-size: 15px">Ver más</a>
+</article>
+</sc-for>
+</div>
+<a href="Modernizacion.dc.html" class="alink"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ver todo lo que desarrollamos</a>
+</div>
+</section>
+
+<section id="como-trabajo" style="max-width: 1280px; margin: 0 auto; padding: 140px 32px; display: flex; flex-direction: column; align-items: center; gap: 36px; text-align: center">
+<div class="rv" style="display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 760px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Cómo trabajo</p>
+<h2 style="font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; font-weight: 500; color: #0E1726">Pensado para alguien como vos</h2>
+<p style="font-size: 17px; line-height: 1.6; color: #17253D">Elegí tu rol y mirá cómo sería trabajar juntos.</p>
+</div>
+<div role="tablist" aria-label="Perfiles" class="pills" style="display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; max-width: 100%">
+<sc-for list="{{ roles }}" as="r" hint-placeholder-count="3">
+<button type="button" role="tab" class="pill" aria-selected="{{ r.selected }}" onClick="{{ r.pick }}" style="{{ r.style }}">{{ r.label }}</button>
+</sc-for>
+</div>
+<div class="rv" style="width: 100%; border-radius: 28px; position: relative; overflow: hidden; padding: 64px 24px; box-sizing: border-box; background: #DDF0F7">
+<div aria-hidden="true" style="position: absolute; left: -60px; top: -50px; width: 260px; height: 260px; border-radius: 999px; background: radial-gradient(circle at 32% 28%, #FFFFFF 0%, #99F6E4 25%, #14B8A6 65%, #0F5E58 100%); filter: blur(1px)"></div>
+<div aria-hidden="true" style="position: absolute; right: -40px; bottom: -70px; width: 320px; height: 320px; border-radius: 999px; background: radial-gradient(circle at 32% 28%, #FFFFFF 0%, #A5B4FC 25%, #2453FF 65%, #0B0D3A 100%); filter: blur(3px)"></div>
+<div aria-hidden="true" style="position: absolute; right: 22%; top: 30px; width: 180px; height: 56px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, #FFFFFF 0%, #67E8F9 40%, #0E7490 100%); transform: rotate(14deg); filter: blur(2px)"></div>
+<div aria-hidden="true" style="position: absolute; left: 14%; bottom: 24px; width: 220px; height: 120px; border-radius: 24px; background-color: #7DD3FC; background-image: radial-gradient(#0B0D3A 2px, transparent 2.4px); background-size: 14px 14px; opacity: .55; transform: rotate(-8deg); filter: blur(1.5px)"></div>
+<div style="position: relative; max-width: 820px; margin: 0 auto; min-height: 330px">
+<sc-for list="{{ panels }}" as="pn" hint-placeholder-count="3">
+<div aria-hidden="{{ pn.hidden }}" style="{{ pn.style }}">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">{{ pn.kicker }}</p>
+<p style="font-size: 26px; line-height: 1.25; font-weight: 500; color: #0E1726">{{ pn.title }}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<sc-for list="{{ pn.steps }}" as="st" hint-placeholder-count="3">
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 6px; text-align: left; box-shadow: 0 0 2px rgba(0,0,0,.08)">
+<span style="font-size: 13px; font-weight: 600; color: #2453FF">Paso {{ st.n }}</span>
+<strong style="font-size: 17px; font-weight: 600; color: #0E1726">{{ st.t }}</strong>
+<span style="font-size: 14px; line-height: 1.5; color: #3B4A63">{{ st.d }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="banda-titulo" class="texture" style="background-color: #14166B; background-image: radial-gradient(rgba(185,200,255,.16) 1.2px, transparent 1.6px), radial-gradient(rgba(108,123,255,.12) 1.2px, transparent 1.6px); background-size: 16px 16px, 24px 24px; background-position: 0 0, 8px 12px; color: #F4FAFD">
+<div class="rv" style="max-width: 860px; margin: 0 auto; padding: 120px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #B9C8FF">Cómo construyo</p>
+<h2 id="banda-titulo" style="font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; font-weight: 500; color: #FFFFFF">Ingeniería de banco, para tu negocio</h2>
+<p style="font-size: 17px; line-height: 1.6; color: #D8DEF5">Tu app se construye con el mismo cuidado que un sistema bancario: accesos seguros, todo documentado y nada que dependa de una sola persona. Y es tuya: el código, las cuentas y los datos quedan a tu nombre.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px">
+<a href="#contacto" class="btn-soft" style="background: #B9C8FF; color: #0B0D3A; text-decoration: none; padding: 0 20px; min-height: 48px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; transition: background-color .2s">Solicitá tu app</a>
+<a href="Articulo.dc.html" class="btn-line" style="border: 2px solid #B9C8FF; color: #FFFFFF; text-decoration: none; padding: 0 20px; min-height: 48px; box-sizing: border-box; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; transition: background-color .2s">Leer un caso técnico</a>
+</div>
+</div>
+</section>
+
+<section id="trayectoria" style="max-width: 1280px; margin: 0 auto; padding: 140px 32px; display: flex; flex-direction: column; align-items: center; gap: 44px">
+<div class="rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; max-width: 760px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Trayectoria</p>
+<h2 style="font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; font-weight: 500; color: #0E1726">Más de 10 años en sistemas que no pueden caerse</h2>
+<p style="font-size: 16px; line-height: 1.6; color: #3B4A63">Donde trabajé como desarrollador y lo último que construí.</p>
+</div>
+<div style="width: 100%; display: flex; flex-wrap: wrap; gap: 16px">
+<div class="rv card" style="flex: 1 1 180px; min-width: 0; min-height: 132px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 20px; transition-delay: 25ms"><strong style="font-size: 18px; font-weight: 600; color: #0E1726">Banco Galicia</strong><span style="font-size: 13px; color: #3B4A63">Senior Developer · migración HSBC</span></div>
+<div class="rv card" style="flex: 1 1 180px; min-width: 0; min-height: 132px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 20px; transition-delay: 50ms"><strong style="font-size: 18px; font-weight: 600; color: #0E1726">New Alliance</strong><span style="font-size: 13px; color: #3B4A63">Los Ángeles · remoto</span></div>
+<div class="rv card" style="flex: 1 1 180px; min-width: 0; min-height: 132px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 20px; transition-delay: 75ms"><strong style="font-size: 18px; font-weight: 600; color: #0E1726">Complejo Alimenticio San Salvador</strong><span style="font-size: 13px; color: #3B4A63">Industria alimenticia</span></div>
+<div class="rv card" style="flex: 1 1 180px; min-width: 0; min-height: 132px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 20px; transition-delay: 100ms"><strong style="font-size: 18px; font-weight: 600; color: #0E1726">Educación Superior y Artística</strong><span style="font-size: 13px; color: #3B4A63">Referente de informática</span></div>
+<div class="rv card" style="flex: 1 1 180px; min-width: 0; min-height: 132px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 20px; transition-delay: 125ms"><strong style="font-size: 18px; font-weight: 600; color: #0E1726">Consultorio dermatológico</strong><span style="font-size: 13px; color: #3B4A63">Agente de IA · 2026</span></div>
+<div class="rv" style="flex: 1 1 180px; min-width: 0; min-height: 132px; border: 2px dashed #A9B7CC; border-radius: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; padding: 20px; box-sizing: border-box; transition-delay: 150ms"><strong style="font-size: 18px; font-weight: 600; color: #142F99">Tu empresa</strong><span style="font-size: 13px; color: #3B4A63">el próximo caso</span></div>
+</div>
+<a href="Articulo.dc.html" class="btn rv" style="background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 20px; min-height: 48px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center">Ver el caso real</a>
+</section>
+
+<section id="contacto" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 140px; display: flex; flex-direction: column; align-items: center; gap: 44px; position: relative">
+<div class="rv" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Contacto</p>
+<h2 style="font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; font-weight: 500; color: #0E1726">Tu siguiente paso</h2>
+</div>
+<div class="rv" style="width: 100%; background: #FFFFFF; border-radius: 24px; padding: 8px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.08); display: flex; flex-wrap: wrap; gap: 8px; box-sizing: border-box">
+<div style="flex: 1 1 340px; min-width: 0; padding: 40px 32px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="font-size: 30px; line-height: 1.2; font-weight: 500; color: #0E1726">Solicitá tu app</h3>
+<p style="font-size: 16px; line-height: 24px; color: #17253D">Contanos qué necesitás con tus palabras, sin términos técnicos. Puede ser una web, una app, una tienda o un chatbot; si no sabés cuál, te ayudamos a elegir.</p>
+<p style="font-size: 16px; line-height: 24px; color: #17253D">Te respondemos en un día hábil, con una propuesta de llamada de 30 minutos o con una respuesta honesta si no es para nosotros.</p>
+</div>
+<form style="flex: 1.2 1 420px; min-width: 0; background: #F4FAFD; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 600; color: #0E1726">¿Cómo te llamás?<input type="text" name="nombre" autocomplete="name" placeholder="Tu nombre" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9D2DE; background: #FFFFFF; color: #0E1726; padding: 0 14px; font: inherit; font-weight: 400; font-size: 16px"></label>
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 600; color: #0E1726">¿Cuál es tu empresa?<input type="text" name="empresa" autocomplete="organization" placeholder="Nombre de la empresa" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9D2DE; background: #FFFFFF; color: #0E1726; padding: 0 14px; font: inherit; font-weight: 400; font-size: 16px"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 600; color: #0E1726">¿Qué problema querés resolver?<textarea name="problema" rows="3" placeholder="Por ejemplo: quiero que mis clientes puedan comprar desde el celular a cualquier hora." style="border-radius: 8px; border: 1px solid #C9D2DE; background: #FFFFFF; color: #0E1726; padding: 12px 14px; font: inherit; font-weight: 400; font-size: 16px; resize: vertical"></textarea></label>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="font-size: 15px; font-weight: 600; color: #0E1726; padding: 0; margin-bottom: 10px">¿Cuál es tu presupuesto?</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ budgets }}" as="b" hint-placeholder-count="5">
+<button type="button" class="pill" aria-pressed="{{ b.pressed }}" onClick="{{ b.pick }}" style="{{ b.style }}">{{ b.label }}</button>
+</sc-for>
+</div>
+</fieldset>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 600; color: #0E1726">¿Dónde te respondo?<input type="text" name="contacto" placeholder="Email o WhatsApp" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9D2DE; background: #FFFFFF; color: #0E1726; padding: 0 14px; font: inherit; font-weight: 400; font-size: 16px"></label>
+<button type="submit" class="btn" style="align-self: flex-start; min-height: 48px; border: 0; border-radius: 8px; background: #2453FF; color: #FFFFFF; padding: 0 22px; font: inherit; font-weight: 600; font-size: 16px; cursor: pointer">Solicitá tu app</button>
+</form>
+</div>
+<div style="width: 100%; display: flex; flex-wrap: wrap; gap: 20px">
+<a href="https://wa.me/[numero]" class="rv card" style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 8px; text-decoration: none; color: #0E1726; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; transition-delay: 25ms">
+<div style="border-radius: 16px; overflow: hidden; height: 150px"><div class="zoom" aria-hidden="true" style="height: 100%; background-color: #0B0D3A; background-image: linear-gradient(rgba(108,123,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(108,123,255,.14) 1px, transparent 1px); background-size: 28px 28px; position: relative"><div style="position: absolute; left: 28px; bottom: -30px; width: 170px; height: 120px; border: 6px solid #3DF5A1; border-radius: 26px"></div></div></div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px"><strong style="font-size: 21px; font-weight: 600">Hablar directamente con David</strong><span style="font-size: 16px; line-height: 24px; color: #17253D">Por WhatsApp, en horario laboral de Argentina.</span><span class="alink"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Abrir WhatsApp</span></div>
+</a>
+<a href="Blog.dc.html" class="rv card" style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 8px; text-decoration: none; color: #0E1726; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; transition-delay: 50ms">
+<div style="border-radius: 16px; overflow: hidden; height: 150px"><div class="zoom" aria-hidden="true" style="height: 100%; background-color: #0B0D3A; background-image: linear-gradient(rgba(108,123,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(108,123,255,.14) 1px, transparent 1px); background-size: 28px 28px; position: relative"><div style="position: absolute; left: 28px; bottom: -30px; width: 170px; height: 120px; border: 6px solid #FACC15; border-radius: 26px"></div></div></div>
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 10px"><strong style="font-size: 21px; font-weight: 600">¿Recién empezás? Mirá por dónde arrancar</strong><span style="font-size: 16px; line-height: 24px; color: #17253D">Notas cortas sobre agentes, costos y sistemas .NET.</span><span class="alink"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ir al blog</span></div>
+</a>
+</div>
+</section>
+
+<footer style="background: #F2F2F2; color: #616161">
+<div style="max-width: 1280px; margin: 0 auto; padding: 56px 32px 28px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 56px; font-size: 13px">
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px"><strong style="font-size: 15px; font-weight: 600; color: #616161">Qué desarrollamos</strong><a href="#servicios" style="color: #262626; text-decoration: none">Páginas web</a><a href="#servicios" style="color: #262626; text-decoration: none">Apps a medida</a><a href="#servicios" style="color: #262626; text-decoration: none">Tiendas digitales</a><a href="Automatizaciones.dc.html" style="color: #262626; text-decoration: none">Chatbots de ventas</a><a href="Modernizacion.dc.html" style="color: #262626; text-decoration: none">Sistemas para empresas</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px"><strong style="font-size: 15px; font-weight: 600; color: #616161">Recursos</strong><a href="Blog.dc.html" style="color: #262626; text-decoration: none">Blog</a><a href="Articulo.dc.html" style="color: #262626; text-decoration: none">Caso real</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px"><strong style="font-size: 15px; font-weight: 600; color: #616161">Sobre mí</strong><a href="Main.dc.html" style="color: #262626; text-decoration: none">Trayectoria</a><span style="color: #262626">San Miguel de Tucumán, Argentina</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px"><strong style="font-size: 15px; font-weight: 600; color: #616161">Contacto</strong><a href="https://wa.me/[numero]" style="color: #262626; text-decoration: none">WhatsApp</a><span style="color: #262626">[email de contacto]</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px"><strong style="font-size: 15px; font-weight: 600; color: #616161">Perfiles</strong><a href="https://www.linkedin.com/in/[usuario]" style="color: #262626; text-decoration: none">LinkedIn</a><a href="https://github.com/[usuario]" style="color: #262626; text-decoration: none">GitHub</a><a href="https://www.upwork.com/freelancers/[perfil]" style="color: #262626; text-decoration: none">Upwork</a></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; font-size: 12px; color: #616161">
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg>Español (Argentina)</span>
+<span>Privacidad</span><span>Términos</span><span style="margin-left: auto">© 2026 DAR Activos Digitales · Ing. David Ariel Raskovsky</span>
+</div>
+</div>
+</footer>
+
+<a href="https://wa.me/[numero]" class="btn" style="position: fixed; right: 24px; bottom: 24px; z-index: 30; background: #2453FF; color: #FFFFFF; text-decoration: none; min-height: 48px; padding: 0 18px; border-radius: 8px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.2)">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>
+Solicitá tu app por WhatsApp
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7400}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { paused: false, active: 'destacados', pill: 0, open: 0, role: 0, budget: -1 };
+}
+componentDidMount() {
+try {
+document.documentElement.classList.add('rvon');
+this.io = new IntersectionObserver((es) => {
+es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); this.io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.rv').forEach((el) => this.io.observe(el));
+this.spy = new IntersectionObserver((es) => {
+es.forEach((e) => { if (e.isIntersecting) this.setState({ active: e.target.id }); });
+}, { rootMargin: '-35% 0px -60% 0px' });
+['destacados', 'soluciones', 'servicios', 'como-trabajo', 'trayectoria', 'contacto'].forEach((id) => {
+const el = document.getElementById(id); if (el) this.spy.observe(el);
+});
+} catch (err) {
+document.documentElement.classList.remove('rvon');
+}
+}
+componentWillUnmount() {
+if (this.io) this.io.disconnect();
+if (this.spy) this.spy.disconnect();
+}
+renderVals() {
+const st = this.state;
+const navItems = [['destacados', 'Destacados'], ['soluciones', 'Soluciones'], ['servicios', 'Servicios'], ['como-trabajo', 'Cómo trabajo'], ['trayectoria', 'Trayectoria']];
+const navBase = 'flex: 0 0 auto; padding: 10px 14px; text-decoration: none; font-size: 15px; font-weight: 600; white-space: nowrap; transition: color .3s, box-shadow .3s; ';
+const sections = navItems.map(([id, label]) => ({
+label, href: '#' + id,
+current: st.active === id ? 'true' : 'false',
+style: navBase + (st.active === id ? 'color: #0E1726; box-shadow: inset 0 -3px 0 #2453FF' : 'color: #3B4A63; box-shadow: inset 0 -3px 0 transparent')
+}));
+const pillOn = 'flex: 0 0 auto; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: #142F99; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap';
+const pillOff = 'flex: 0 0 auto; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: rgba(36,83,255,.10); color: #142F99; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap';
+const groups = [
+{ label: 'Vender más', items: [
+{ title: 'Chatbot que vende las 24 horas', desc: 'Responde precios y stock, arma el pedido y le manda al cliente el link de pago, aunque sean las 3 de la mañana.', cta: 'Solicitá tu chatbot', href: '#contacto', kicker: 'Chatbot de ventas', lines: ['El cliente pregunta por WhatsApp', 'El chatbot responde y arma el pedido', 'Le envía el link de pago'] },
+{ title: 'Tienda digital', desc: 'Tus productos online, con carrito y cobro con Mercado Pago o tarjeta.', cta: 'Solicitá tu tienda', href: '#contacto', kicker: 'Tienda digital', lines: ['Catálogo con fotos y precios', 'Carrito y pago online', 'Aviso de cada venta'] },
+{ title: 'Página web para que te encuentren', desc: 'Una web clara y rápida, preparada para aparecer en Google y en los buscadores con IA.', cta: 'Solicitá tu web', href: '#contacto', kicker: 'Página web', lines: ['Qué hacés y para quién', 'Botón directo a WhatsApp', 'Lista para los buscadores'] }
+]},
+{ label: 'Atender mejor', items: [
+{ title: 'Respuestas automáticas', desc: 'Las preguntas de siempre, respondidas al instante con tu información.', cta: 'Ver cómo funciona', href: 'Automatizaciones.dc.html', kicker: 'Consultas', lines: ['Pregunta frecuente', 'Respuesta con tu información', 'Derivación a una persona si hace falta'] },
+{ title: 'Turnos online', desc: 'Tus clientes reservan solos y el turno aparece en tu agenda de Google.', cta: 'Ver el caso real', href: 'Articulo.dc.html', kicker: 'Turnos', lines: ['El cliente pide turno', 'Ve los horarios libres', 'El turno queda en tu agenda'] },
+{ title: 'Avisos a tu equipo', desc: 'Cuando un cliente necesita a una persona, tu equipo recibe un aviso.', cta: 'Ver cómo funciona', href: 'Automatizaciones.dc.html', kicker: 'Derivación', lines: ['El chatbot detecta el caso', 'Deja de responder', 'Tu equipo recibe el aviso'] }
+]},
+{ label: 'Organizar tu negocio', items: [
+{ title: 'App para tu equipo', desc: 'Pedidos, stock, clientes o tareas en una app simple, en el celular y en la computadora.', cta: 'Solicitá tu app', href: '#contacto', kicker: 'App para tu equipo', lines: ['Cargás desde el celular', 'Todos ven lo mismo', 'Reportes siempre al día'] },
+{ title: 'Panel con tus números', desc: 'Ventas, pedidos y clientes en una sola pantalla, actualizada sola.', cta: 'Consultar', href: '#contacto', kicker: 'Panel', lines: ['Tus datos, de donde estén', 'Un panel claro', 'Se actualiza solo'] },
+{ title: 'Conectar lo que ya usás', desc: 'Que tu tienda, tu planilla, tu facturación y WhatsApp se hablen entre sí.', cta: 'Consultar', href: '#contacto', kicker: 'Conexiones', lines: ['Herramientas separadas', 'Conexión automática', 'Menos carga a mano'] }
+]},
+{ label: 'Ya tengo un sistema', items: [
+{ title: 'Diagnóstico de precio fijo', desc: 'Revisamos el sistema que ya tenés y te decimos qué conviene hacer y cuánto cuesta. Si seguimos juntos, se descuenta.', cta: 'Ver el diagnóstico', href: 'Modernizacion.dc.html', kicker: 'Diagnóstico', lines: ['Cómo lo usa tu equipo', 'Qué riesgos tiene', 'Plan con precio por etapas'] },
+{ title: 'Arreglar y mejorar lo que ya funciona', desc: 'Corregimos errores y agregamos lo que falta, sin frenar tu operación.', cta: 'Ver cómo trabajamos', href: 'Modernizacion.dc.html', kicker: 'Mejoras', lines: ['Lista de problemas', 'Arreglos por prioridad', 'Todo documentado'] },
+{ title: 'Renovar tu sistema por partes', desc: 'Pasamos tu sistema a tecnología actual de a una parte por vez, con vuelta atrás. Especialidad: sistemas hechos en .NET.', cta: 'Ver cómo lo hacemos', href: 'Modernizacion.dc.html', kicker: 'Renovación', lines: ['Lo actual sigue andando', 'Se reemplaza una parte por vez', 'Se valida antes de apagar lo anterior'] }
+]}
+];
+const g = groups[st.pill];
+const pills = groups.map((gr, i) => ({ label: gr.label, selected: i === st.pill ? 'true' : 'false', style: i === st.pill ? pillOn : pillOff, pick: () => this.setState({ pill: i, open: 0 }) }));
+const items = g.items.map((it, i) => {
+const open = i === st.open;
+return { title: it.title, desc: it.desc, cta: it.cta, href: it.href, open, expanded: open ? 'true' : 'false', sign: open ? '−' : '+',
+rowStyle: 'padding: 20px 0 20px 20px; border-left: 3px solid ' + (open ? '#2453FF' : '#D5DDE8') + '; transition: border-color .3s',
+pick: () => this.setState({ open: i }) };
+});
+const panelBase = 'position: absolute; inset: 0; background: #FFFFFF; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 10px; transition: opacity 1.2s ease-in-out .05s; ';
+const visuals = g.items.map((it, i) => ({ kicker: it.kicker, title: it.title, hidden: i === st.open ? 'false' : 'true',
+lines: it.lines.map((t, k) => ({ n: k + 1, t })),
+style: panelBase + (i === st.open ? 'opacity: 1' : 'opacity: 0; pointer-events: none') }));
+const cardBase = 'flex: 1 1 300px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 28px; box-shadow: 0 0 2px rgba(0,0,0,.12), 0 8px 24px rgba(14,23,38,.06); display: flex; flex-direction: column; gap: 14px; ';
+const prodData = [
+{ title: 'Página web', desc: 'Para que te encuentren y te escriban. Rápida y lista para buscadores.', href: '#contacto', icon: 'M12 3a9 9 0 1 1 0 18a9 9 0 0 1 0-18zM3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18' },
+{ title: 'App a medida', desc: 'Para tus clientes o tu equipo, en el celular y la computadora.', href: '#contacto', icon: 'M8 3h8a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM11 18h2' },
+{ title: 'Tienda digital', desc: 'Catálogo, carrito y cobro online con Mercado Pago o tarjeta.', href: '#contacto', icon: 'M5 7h14l-1.5 9h-11zM9 7V5a3 3 0 0 1 6 0v2' },
+{ title: 'Chatbot de ventas', desc: 'Responde, arma el pedido y cobra por WhatsApp o Instagram, las 24 horas.', href: 'Automatizaciones.dc.html', icon: 'M4 5h16v11H9l-5 4zM8 10h8M8 13h5' },
+{ title: 'Turnos online', desc: 'Tus clientes reservan solos y el turno cae en tu agenda.', href: 'Automatizaciones.dc.html', icon: 'M4 6h16v14H4zM4 10h16M9 3v5M15 3v5' },
+{ title: 'Sistema para tu empresa', desc: 'Arreglamos, mejoramos o renovamos el sistema que ya usás.', href: 'Modernizacion.dc.html', icon: 'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5' }
+];
+const products = prodData.map((p, i) => ({ ...p, style: cardBase + 'transition-delay: ' + ((i % 3) + 1) * 25 + 'ms' }));
+const roleData = [
+{ label: 'Dueño de negocio', kicker: 'Si tenés un comercio, un consultorio o una pyme', title: 'Querés vender más sin vivir pegado al celular.', steps: [
+{ n: 1, t: 'Nos contás tu negocio', d: 'Una charla de 30 minutos, sin términos técnicos.' },
+{ n: 2, t: 'Propuesta con precio fijo', d: 'Qué incluye tu app, en cuántos días está y cuánto cuesta.' },
+{ n: 3, t: 'Tu app funcionando', d: 'Te enseñamos a usarla y la ajustamos durante la primera semana.' }] },
+{ label: 'Gerente de operaciones', kicker: 'Si dirigís una planta o un área operativa', title: 'Tu sistema interno es lento o nadie lo conoce a fondo.', steps: [
+{ n: 1, t: 'Diagnóstico de precio fijo', d: 'Lo revisamos con las personas que lo usan todos los días.' },
+{ n: 2, t: 'Plan por etapas', d: 'Cada etapa con su precio y con qué tiene que funcionar para darla por terminada.' },
+{ n: 3, t: 'Una parte por vez', d: 'Sin frenar la operación y con vuelta atrás.' }] },
+{ label: 'Equipo de TI', kicker: 'Si liderás un equipo de desarrollo', title: 'Necesitás un senior .NET que se sume sin fricción.', steps: [
+{ n: 1, t: 'Acceso y revisión', d: 'Leo el repositorio y te devuelvo un diagnóstico.' },
+{ n: 2, t: 'Tareas acotadas', d: 'Con criterios de aceptación y revisión de código.' },
+{ n: 3, t: 'Traspaso documentado', d: 'Todo queda en tu repositorio y en tu wiki.' }] }
+];
+const roles = roleData.map((r, i) => ({ label: r.label, selected: i === st.role ? 'true' : 'false', style: i === st.role ? pillOn : pillOff, pick: () => this.setState({ role: i }) }));
+const glass = 'position: absolute; inset: 0; background: rgba(255,255,255,.62); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.8); border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 10px; transition: opacity 1.2s ease-in-out .05s; ';
+const panels = roleData.map((r, i) => ({ kicker: r.kicker, title: r.title, steps: r.steps, hidden: i === st.role ? 'false' : 'true', style: glass + (i === st.role ? 'opacity: 1' : 'opacity: 0; pointer-events: none') }));
+const budgetLabels = ['Hasta USD 300', 'USD 300 – 1.000', 'USD 1.000 – 3.000', 'Más de USD 3.000', 'Todavía no sé'];
+const bOn = 'min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: #142F99; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer';
+const bOff = 'min-height: 44px; padding: 0 16px; border-radius: 999px; border: 0; background: rgba(36,83,255,.10); color: #142F99; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer';
+const budgets = budgetLabels.map((l, i) => ({ label: l, pressed: i === st.budget ? 'true' : 'false', style: i === st.budget ? bOn : bOff, pick: () => this.setState({ budget: i }) }));
+return {
+paused: st.paused, playing: !st.paused,
+heroClass: st.paused ? 'paused' : '',
+pauseLabel: st.paused ? 'Reanudar animación' : 'Pausar animación',
+togglePause: () => this.setState({ paused: !st.paused }),
+sections, pills, items, visuals, products, roles, panels, budgets
+};
+}
+}
+</script>
+</body>
+</html>

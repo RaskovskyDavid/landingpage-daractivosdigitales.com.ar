@@ -1,0 +1,68 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://daractivosdigitales.com.ar/#org",
+      "name": "DAR Activos Digitales",
+      "url": "https://daractivosdigitales.com.ar/",
+      "description": "Estudio de software del ingeniero David Ariel Raskovsky. Desarrolla páginas web, apps, tiendas digitales y chatbots de ventas, y mantiene o renueva sistemas de empresas.",
+      "founder": { "@id": "https://daractivosdigitales.com.ar/#david" },
+      "areaServed": "Hispanoamérica",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Miguel de Tucumán",
+        "addressRegion": "Tucumán",
+        "addressCountry": "AR"
+      },
+      "email": "[EMAIL]",
+      "telephone": "[WHATSAPP]",
+      "knowsLanguage": ["es"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Qué desarrollamos",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@id": "https://daractivosdigitales.com.ar/servicios/chatbots-y-automatizaciones#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://daractivosdigitales.com.ar/servicios/webs-apps-y-tiendas#service" } },
+          { "@type": "Offer", "itemOffered": { "@id": "https://daractivosdigitales.com.ar/servicios/sistemas-para-empresas#service" } }
+        ]
+      },
+      "sameAs": ["[URL LINKEDIN]", "[URL GITHUB]", "[URL UPWORK]"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://daractivosdigitales.com.ar/#david",
+      "name": "David Ariel Raskovsky",
+      "jobTitle": "Ingeniero en Informática",
+      "worksFor": { "@id": "https://daractivosdigitales.com.ar/#org" },
+      "homeLocation": { "@type": "Place", "name": "San Miguel de Tucumán, Argentina" },
+      "knowsAbout": ["C#", ".NET", "SQL Server", "APIs REST", "Microservicios", "Chatbots", "Automatización con n8n"],
+      "alumniOf": "[UNIVERSIDAD — confirmar]",
+      "sameAs": ["[URL LINKEDIN]", "[URL GITHUB]", "[URL UPWORK]"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://daractivosdigitales.com.ar/servicios/chatbots-y-automatizaciones#service",
+      "name": "Chatbots de ventas y automatizaciones",
+      "serviceType": "Chatbot de ventas y atención por WhatsApp e Instagram",
+      "provider": { "@id": "https://daractivosdigitales.com.ar/#org" },
+      "description": "Chatbots que responden consultas, arman pedidos, envían el link de pago y reservan turnos en Google Calendar, las 24 horas."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://daractivosdigitales.com.ar/servicios/webs-apps-y-tiendas#service",
+      "name": "Páginas web, apps y tiendas digitales",
+      "serviceType": "Desarrollo de páginas web, apps a medida y tiendas digitales",
+      "provider": { "@id": "https://daractivosdigitales.com.ar/#org" },
+      "description": "Páginas web preparadas para buscadores, apps para clientes o equipos, y tiendas digitales con cobro online."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://daractivosdigitales.com.ar/servicios/sistemas-para-empresas#service",
+      "name": "Sistemas para empresas",
+      "serviceType": "Mantenimiento y renovación de sistemas empresariales (especialidad .NET y SQL Server)",
+      "provider": { "@id": "https://daractivosdigitales.com.ar/#org" },
+      "description": "Diagnóstico de precio fijo, mejoras y renovación por etapas del sistema que la empresa ya usa, sin frenar la operación."
+    }
+  ]
+}

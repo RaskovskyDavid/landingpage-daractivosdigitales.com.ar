@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Automatizaciones con IA para WhatsApp e Instagram</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF;color:#0B0B0C;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+a{color:#2453FF}a:hover{color:#1A3FCC}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+.up{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.12s}.d2{animation-delay:.24s}.d3{animation-delay:.36s}
+.b1,.b2,.b3,.b4{animation:pop .5s cubic-bezier(.2,.7,.2,1) both}
+.b1{animation-delay:1s}.b2{animation-delay:2s}.b3{animation-delay:3s}.b4{animation-delay:3.8s}
+@supports (animation-timeline: view()){.rv{animation:up linear both;animation-timeline:view();animation-range:entry 0% entry 45%}}
+.lift{transition:transform .35s cubic-bezier(.2,.7,.2,1)}.lift:hover{transform:translateY(-6px)}
+.pill:has(input:checked){background:#0B0B0C;color:#FFFFFF;border-color:#0B0B0C}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 100%; background: #FFFFFF">
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid #E6E6E3">
+<nav aria-label="Principal" style="max-width: 1180px; margin: 0 auto; padding: 0 24px; min-height: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 8px; text-decoration: none; color: #0B0B0C"><span style="font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.02em">DAR</span><span style="font-size: 14px; color: #5C5F66">Activos Digitales</span></a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 14px">
+<a href="Automatizaciones.dc.html" aria-current="page" style="color: #2453FF; text-decoration: none; font-weight: 500">Automatizaciones con IA</a>
+<a href="Modernizacion.dc.html" style="color: #0B0B0C; text-decoration: none">Sistemas .NET</a>
+<a href="Blog.dc.html" style="color: #0B0B0C; text-decoration: none">Blog</a>
+<a href="Main.dc.html" style="color: #0B0B0C; text-decoration: none">Sobre mí</a>
+<a href="#contacto" style="background: #0B0B0C; color: #FFFFFF; text-decoration: none; padding: 0 16px; min-height: 36px; border-radius: 999px; font-weight: 500; display: inline-flex; align-items: center">Contacto</a>
+</div>
+</nav>
+</header>
+
+<section style="padding: 12px 12px 0">
+<div style="background: #0B0B0C; color: #F4F4F2; border-radius: 28px; padding: 40px 24px 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; overflow: hidden">
+<p style="font-size: 13px; color: #8C8F96; align-self: flex-start; max-width: 1180px; width: 100%; margin: 0 auto; text-align: left"><a href="Main.dc.html" style="color: #8C8F96; text-decoration: none">Inicio</a> › Servicios › Automatizaciones con IA</p>
+<p class="up" style="margin-top: 48px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #C8F55A">Automatizaciones con IA</p>
+<h1 class="up d1" style="font-family: 'Inter Tight', sans-serif; font-size: clamp(42px, 6.4vw, 88px); line-height: 1.0; letter-spacing: -0.04em; font-weight: 600; max-width: 1040px">Tu negocio responde a cualquier hora. <span style="color: #8FB0FF">Vos solo atendés lo importante.</span></h1>
+<p class="up d2" style="font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: #C7C9CE; max-width: 780px">DAR Activos Digitales construye agentes de atención para comercios, consultorios y pymes. El agente responde consultas frecuentes, agenda turnos en Google Calendar, registra pedidos en una planilla o CRM y deriva a una persona cuando no sabe. Usa n8n y las APIs oficiales de Meta, con precio fijo por paquete y los costos de mensajes y de IA informados antes de empezar.</p>
+<div class="up d3" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 28px">
+<a href="#contacto" style="background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 26px; min-height: 50px; border-radius: 999px; font-weight: 500; font-size: 17px; display: inline-flex; align-items: center">Agendar diagnóstico →</a>
+<a href="#paquetes" style="color: #8FB0FF; text-decoration: none; font-size: 17px">Ver paquetes ›</a>
+</div>
+<div style="margin-top: 40px; width: 100%; max-width: 460px; background: #17181B; border: 1px solid #2A2C31; border-bottom: 0; border-radius: 24px 24px 0 0; padding: 22px 22px 28px; display: flex; flex-direction: column; gap: 10px; text-align: left; font-size: 15px; line-height: 1.45">
+<p style="font-size: 12px; color: #8C8F96; text-align: center">Ejemplo de conversación · pedido</p>
+<p class="b1" style="align-self: flex-end; background: #2453FF; color: #FFFFFF; padding: 10px 14px; border-radius: 18px 18px 4px 18px; max-width: 78%">¿Tienen yerba de 1 kg? Necesito 6.</p>
+<p class="b2" style="align-self: flex-start; background: #26282D; color: #F4F4F2; padding: 10px 14px; border-radius: 18px 18px 18px 4px; max-width: 78%">Sí, hay stock. ¿A nombre de quién cargo el pedido?</p>
+<p class="b3" style="align-self: flex-end; background: #2453FF; color: #FFFFFF; padding: 10px 14px; border-radius: 18px 18px 4px 18px; max-width: 78%">Almacén Rivera.</p>
+<p class="b4" style="align-self: center; font-size: 12px; color: #C8F55A; border: 1px solid #3A4A1C; padding: 4px 10px; border-radius: 999px">Pedido registrado en la planilla</p>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 112px 24px 40px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5C5F66">Qué resuelve</p>
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(32px, 4vw, 52px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 600">Las mismas preguntas, todos los días.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div class="rv lift" style="flex: 2 1 440px; min-width: 0; background: #F4F4F2; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 10px; min-height: 200px"><h3 style="font-size: 22px; font-weight: 600">Consultas repetidas</h3><p style="font-size: 16px; line-height: 1.55; color: #3A3D44; max-width: 440px">Precios, horarios, ubicación, stock y formas de pago, respondidos con tu información.</p></div>
+<div class="rv lift" style="flex: 1 1 280px; min-width: 0; background: #F4F4F2; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 10px"><h3 style="font-size: 22px; font-weight: 600">Turnos</h3><p style="font-size: 16px; line-height: 1.55; color: #3A3D44">Ofrece horarios libres y reserva en tu Google Calendar.</p></div>
+<div class="rv lift" style="flex: 1 1 280px; min-width: 0; background: #F4F4F2; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 10px"><h3 style="font-size: 22px; font-weight: 600">Pedidos</h3><p style="font-size: 16px; line-height: 1.55; color: #3A3D44">Los carga en una planilla de Google o en tu CRM.</p></div>
+<div class="rv lift" style="flex: 2 1 440px; min-width: 0; background: #0B0B0C; color: #F4F4F2; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 10px"><h3 style="font-size: 22px; font-weight: 600">Derivación a una persona</h3><p style="font-size: 16px; line-height: 1.55; color: #C7C9CE; max-width: 460px">Si no sabe la respuesta o el cliente lo pide, avisa a tu equipo y deja de responder.</p></div>
+</div>
+</section>
+
+<section style="max-width: 1180px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5C5F66">Cómo funciona</p>
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(32px, 4vw, 52px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 600">Reglas fijas primero. <span style="color: #2453FF">IA solo donde hace falta.</span></h2>
+<p style="font-size: 18px; line-height: 1.55; color: #3A3D44">Lo que se resuelve con una regla no pasa por el modelo. Así el agente es más predecible y cuesta menos operarlo.</p>
+</div>
+<ol style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid #0B0B0C">
+<li class="rv" style="flex: 1 1 200px; min-width: 0; padding: 24px 20px 24px 0; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Inter Tight', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #2453FF">01</span><strong style="font-size: 17px; font-weight: 600">Llega el mensaje</strong><span style="font-size: 14px; line-height: 1.5; color: #5C5F66">WhatsApp Cloud API o API de Instagram, sin intermediarios.</span></li>
+<li class="rv" style="flex: 1 1 200px; min-width: 0; padding: 24px 20px 24px 0; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Inter Tight', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #2453FF">02</span><strong style="font-size: 17px; font-weight: 600">Filtro de reglas</strong><span style="font-size: 14px; line-height: 1.5; color: #5C5F66">Horarios, urgencias y pedidos de hablar con una persona.</span></li>
+<li class="rv" style="flex: 1 1 200px; min-width: 0; padding: 24px 20px 24px 0; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Inter Tight', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #2453FF">03</span><strong style="font-size: 17px; font-weight: 600">Agente con herramientas acotadas</strong><span style="font-size: 14px; line-height: 1.5; color: #5C5F66">Solo consulta y hace lo que está definido.</span></li>
+<li class="rv" style="flex: 1 1 200px; min-width: 0; padding: 24px 20px 24px 0; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Inter Tight', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #2453FF">04</span><strong style="font-size: 17px; font-weight: 600">Acción en tus sistemas</strong><span style="font-size: 14px; line-height: 1.5; color: #5C5F66">Calendar, planilla o CRM.</span></li>
+<li class="rv" style="flex: 1 1 200px; min-width: 0; padding: 24px 20px 24px 0; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Inter Tight', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #2453FF">05</span><strong style="font-size: 17px; font-weight: 600">Aviso a tu equipo</strong><span style="font-size: 14px; line-height: 1.5; color: #5C5F66">Por email o Telegram, cuando hace falta una persona.</span></li>
+</ol>
+</section>
+
+<section style="padding: 0 12px">
+<div class="rv" style="background: #0B0B0C; color: #F4F4F2; border-radius: 28px; max-width: 1180px; margin: 0 auto; padding: 64px 40px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #C8F55A">Caso · Salud · 2026</p>
+<span style="font-family: 'Inter Tight', sans-serif; font-size: clamp(72px, 9vw, 120px); font-weight: 600; letter-spacing: -0.05em; line-height: 0.95">~20</span>
+<span style="font-size: 18px; color: #C7C9CE">consultas por día atendidas sin intervención</span>
+</div>
+<div style="flex: 1.4 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.025em; font-weight: 600">Agente de turnos para un consultorio dermatológico.</h2>
+<p style="font-size: 17px; line-height: 1.6; color: #C7C9CE">Los pacientes pedían turno por Instagram. El agente respondía y reservaba en el Google Calendar compartido, sobre un servidor n8n propio y la API de Meta. Se desactivó cuando el consultorio cerró.</p>
+<p style="font-size: 15px; color: #8C8F96">[Otro resultado medido, o borrar esta línea.]</p>
+<a href="Articulo.dc.html" style="color: #8FB0FF; text-decoration: none; font-weight: 500">Leer la arquitectura completa →</a>
+</div>
+</div>
+</section>
+
+<section id="paquetes" style="max-width: 1180px; margin: 0 auto; padding: 120px 24px 80px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<p style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5C5F66">Paquetes</p>
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.03; letter-spacing: -0.035em; font-weight: 600">Precio fijo. Alcance por escrito.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch">
+<article class="rv lift" style="flex: 1 1 280px; min-width: 0; background: #F4F4F2; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="font-size: 20px; font-weight: 600">Respuestas automáticas</h3>
+<p style="font-family: 'Inter Tight', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.03em">USD [—]</p>
+<p style="font-size: 14px; color: #5C5F66">Entrega en [—] días</p>
+<ul style="padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #3A3D44"><li>1 canal: WhatsApp o Instagram</li><li>Preguntas frecuentes con tu información</li><li>Derivación a una persona</li><li>2 rondas de ajustes</li></ul>
+<a href="#contacto" style="margin-top: auto; text-decoration: none; font-weight: 500">Consultar ›</a>
+</article>
+<article class="rv lift" style="flex: 1.25 1 320px; min-width: 0; background: #0B0B0C; color: #F4F4F2; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #C8F55A">El más pedido</p>
+<h3 style="font-size: 22px; font-weight: 600">Agente de turnos o pedidos</h3>
+<p style="font-family: 'Inter Tight', sans-serif; font-size: 44px; font-weight: 600; letter-spacing: -0.03em">USD [—]</p>
+<p style="font-size: 14px; color: #A1A4AB">Entrega en [—] días</p>
+<ul style="padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #E4E6EA"><li>Todo lo del paquete anterior</li><li>Reserva en Google Calendar o carga en planilla / CRM</li><li>Aviso a tu equipo por email o Telegram</li><li>Panel simple de conversaciones y consumo</li><li>1 hora de capacitación y documentación</li></ul>
+<a href="#contacto" style="margin-top: auto; background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 22px; min-height: 46px; border-radius: 999px; font-weight: 500; display: inline-flex; align-items: center; align-self: flex-start">Empezar con este →</a>
+</article>
+<article class="rv lift" style="flex: 1 1 280px; min-width: 0; border: 1px solid #E6E6E3; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="font-size: 20px; font-weight: 600">A medida y soporte</h3>
+<p style="font-family: 'Inter Tight', sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -0.03em">Desde USD [—]<span style="font-size: 18px; color: #5C5F66">/mes</span></p>
+<p style="font-size: 14px; color: #5C5F66">Se cotiza después del diagnóstico</p>
+<ul style="padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #3A3D44"><li>Varios canales o áreas</li><li>Integración con tu sistema actual</li><li>Mejoras y monitoreo mensual</li></ul>
+<a href="#contacto" style="margin-top: auto; text-decoration: none; font-weight: 500">Consultar ›</a>
+</article>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 1 1 380px; min-width: 0; border: 1px solid #E6E6E3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 8px"><h3 style="font-size: 17px; font-weight: 600">Costos que se pagan aparte</h3><p style="font-size: 15px; line-height: 1.6; color: #3A3D44">Los mensajes que cobra Meta, el uso del modelo de IA y el servidor se pagan a su costo, a tu nombre o con tu propia clave. Antes de empezar te paso una estimación mensual según tu volumen.</p></div>
+<div style="flex: 1 1 380px; min-width: 0; border: 1px solid #E6E6E3; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 8px"><h3 style="font-size: 17px; font-weight: 600">Qué no incluye</h3><p style="font-size: 15px; line-height: 1.6; color: #3A3D44">Redacción de contenidos que no existen, compra de bases de contactos, envíos masivos ni campañas publicitarias.</p></div>
+</div>
+</section>
+
+<section style="background: #F4F4F2">
+<div style="max-width: 1180px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 300px; min-width: 0"><h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(30px, 3.6vw, 44px); letter-spacing: -0.03em; font-weight: 600; line-height: 1.05">Preguntas frecuentes.</h2></div>
+<dl style="flex: 2 1 560px; min-width: 0; border-top: 1px solid #DADAD6">
+<div style="padding: 22px 0; border-bottom: 1px solid #DADAD6; display: flex; flex-direction: column; gap: 8px"><dt style="font-weight: 600; font-size: 18px">¿Necesito WhatsApp Business?</dt><dd style="color: #3A3D44; line-height: 1.6">Se usa la API oficial de WhatsApp, que requiere una cuenta de Meta Business verificada. Te acompaño en el alta.</dd></div>
+<div style="padding: 22px 0; border-bottom: 1px solid #DADAD6; display: flex; flex-direction: column; gap: 8px"><dt style="font-weight: 600; font-size: 18px">¿Qué pasa si la IA responde mal?</dt><dd style="color: #3A3D44; line-height: 1.6">El agente solo usa la información y las acciones que definimos juntos. Ante la duda, deriva a una persona. Revisamos las conversaciones durante la primera semana.</dd></div>
+<div style="padding: 22px 0; border-bottom: 1px solid #DADAD6; display: flex; flex-direction: column; gap: 8px"><dt style="font-weight: 600; font-size: 18px">¿De quién son las cuentas y el código?</dt><dd style="color: #3A3D44; line-height: 1.6">Tuyos. Las cuentas de Meta, Google y del servidor quedan a tu nombre.</dd></div>
+</dl>
+</div>
+</section>
+
+<section id="contacto" style="padding: 12px">
+<div style="background: #2453FF; color: #FFFFFF; border-radius: 28px; max-width: 1180px; margin: 0 auto; padding: 72px 40px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h2 style="font-family: 'Inter Tight', sans-serif; font-size: clamp(32px, 4vw, 52px); letter-spacing: -0.035em; font-weight: 600; line-height: 1.02">Revisemos tu atención actual en 30 minutos.</h2>
+<p style="font-size: 18px; line-height: 1.55; color: #E1E8FF">Cuatro preguntas y listo. Te respondo en un día hábil.</p>
+</div>
+<form style="flex: 1 1 440px; min-width: 0; background: #FFFFFF; color: #0B0B0C; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; font-weight: 600">¿Cómo te llamás?<input type="text" name="nombre" autocomplete="name" placeholder="Tu nombre" style="min-height: 50px; border-radius: 12px; border: 1px solid #DADAD6; background: #F4F4F2; color: #0B0B0C; padding: 0 14px; font: inherit; font-weight: 400; font-size: 16px"></label>
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; font-weight: 600">¿Cuál es tu empresa?<input type="text" name="empresa" autocomplete="organization" placeholder="Nombre del negocio" style="min-height: 50px; border-radius: 12px; border: 1px solid #DADAD6; background: #F4F4F2; color: #0B0B0C; padding: 0 14px; font: inherit; font-weight: 400; font-size: 16px"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 16px; font-weight: 600">¿Qué problema querés resolver?<textarea name="problema" rows="3" placeholder="Por ejemplo: nos escriben por WhatsApp a toda hora y no damos abasto con los turnos." style="border-radius: 12px; border: 1px solid #DADAD6; background: #F4F4F2; color: #0B0B0C; padding: 12px 14px; font: inherit; font-weight: 400; font-size: 16px; resize: vertical"></textarea></label>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-size: 16px; font-weight: 600; padding: 0; margin-bottom: 10px">¿Cuál es tu presupuesto?</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 15px">
+<label class="pill" style="min-height: 44px; padding: 0 16px; border: 1px solid #DADAD6; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><input type="radio" name="presupuesto" style="accent-color: #2453FF; margin: 0">Hasta USD 300</label>
+<label class="pill" style="min-height: 44px; padding: 0 16px; border: 1px solid #DADAD6; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><input type="radio" name="presupuesto" style="accent-color: #2453FF; margin: 0">USD 300 – 1.000</label>
+<label class="pill" style="min-height: 44px; padding: 0 16px; border: 1px solid #DADAD6; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><input type="radio" name="presupuesto" style="accent-color: #2453FF; margin: 0">USD 1.000 – 3.000</label>
+<label class="pill" style="min-height: 44px; padding: 0 16px; border: 1px solid #DADAD6; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><input type="radio" name="presupuesto" style="accent-color: #2453FF; margin: 0">Más de USD 3.000</label>
+<label class="pill" style="min-height: 44px; padding: 0 16px; border: 1px solid #DADAD6; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><input type="radio" name="presupuesto" style="accent-color: #2453FF; margin: 0">Todavía no sé</label>
+</div>
+</fieldset>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 16px; font-weight: 600">¿Dónde te respondo?<input type="text" name="contacto" placeholder="Email o WhatsApp" style="min-height: 50px; border-radius: 12px; border: 1px solid #DADAD6; background: #F4F4F2; color: #0B0B0C; padding: 0 14px; font: inherit; font-weight: 400; font-size: 16px"></label>
+<button type="submit" style="min-height: 54px; border: 0; border-radius: 999px; background: #2453FF; color: #FFFFFF; font: inherit; font-weight: 500; font-size: 17px; cursor: pointer">Quiero mi diagnóstico →</button>
+</form>
+</div>
+</section>
+
+<footer style="background: #F4F4F2; color: #5C5F66; font-size: 13px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 40px 24px 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px">
+<span><strong style="color: #0B0B0C">DAR Activos Digitales</strong> · Ing. David Ariel Raskovsky · Tucumán, Argentina</span>
+<div style="display: flex; flex-wrap: wrap; gap: 20px"><a href="https://www.linkedin.com/in/[usuario]" style="color: #3A3D44; text-decoration: none">LinkedIn</a><a href="https://github.com/[usuario]" style="color: #3A3D44; text-decoration: none">GitHub</a><a href="Blog.dc.html" style="color: #3A3D44; text-decoration: none">Blog</a><span>© 2026</span></div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
