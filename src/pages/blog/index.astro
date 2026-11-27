@@ -1,0 +1,218 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+})).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Collect unique tags
+const allTags = Array.from(new Set(posts.flatMap((p) => p.data.tags || []))).sort();
+---
+
+<BlogLayout
+  title="Blog Técnico — Ingeniería y Arquitectura de Software"
+  description="Artículos técnicos en profundidad sobre arquitectura en .NET, sistemas distribuidos, optimización de bases de datos, patrones de diseño y desarrollo cloud."
+>
+  <div style="max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px 24px;">
+    <!-- Hero / Header -->
+    <header style="margin-bottom: 48px; text-align: left;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #E0E7FF; color: #1E3A8A; font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;">
+        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #2453FF;"></span>
+        Publicaciones de Ingeniería
+      </div>
+      <h1 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: #0F172A; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px;">
+        Arquitectura & Sistemas Críticos
+      </h1>
+      <p style="font-size: 1.15rem; color: #475569; max-width: 760px; line-height: 1.6; margin: 0;">
+        Artículos prácticos sobre ingeniería de software en .NET, resiliencia distribuida, optimización de latencia en SQL Server y lecciones aprendidas en producción.
+      </p>
+    </header>
+
+    <!-- Search & Filter Controls -->
+    <section style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px; box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04); margin-bottom: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Search Input -->
+        <div style="position: relative; width: 100%;">
+          <svg style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #94A3B8; pointer-events: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="search"
+            id="blog-search-input"
+            placeholder="Buscar por título, contenido o tecnología (.NET, Sharding, Outbox, SQL)..."
+            style="width: 100%; padding: 14px 16px 14px 48px; border-radius: 10px; border: 1px solid #CBD5E1; font-size: 15px; font-family: inherit; outline: none; transition: border-color .2s, box-shadow .2s; background: #F8FAFC;"
+            onfocus="this.style.borderColor='#2453FF'; this.style.boxShadow='0 0 0 3px rgba(36, 83, 255, 0.15)';"
+            onblur="this.style.borderColor='#CBD5E1'; this.style.boxShadow='none';"
+          />
+        </div>
+
+        <!-- Tag Filter Pills -->
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
+          <span style="font-size: 13px; font-weight: 600; color: #64748B; margin-right: 4px;">Etiquetas:</span>
+          <button
+            class="tag-pill active"
+            data-tag="all"
+            style="cursor: pointer; border: none; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 20px; transition: all 0.2s; background: #2453FF; color: #FFFFFF;"
+          >
+            Todos ({posts.length})
+          </button>
+          {allTags.map((tag) => {
+            const count = posts.filter(p => p.data.tags?.includes(tag)).length;
+            return (
+              <button
+                class="tag-pill"
+                data-tag={tag}
+                style="cursor: pointer; border: 1px solid #E2E8F0; font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 20px; transition: all 0.2s; background: #F1F5F9; color: #475569;"
+              >
+                #{tag} <span style="opacity: 0.6; font-size: 11px;">({count})</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pagefind integration target container (for static indexing) -->
+    <div id="pagefind-search" style="margin-bottom: 24px; display: none;"></div>
+
+    <!-- Posts Grid -->
+    <div id="posts-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;">
+      {posts.map((post) => {
+        const formattedDate = new Intl.DateTimeFormat('es-AR', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }).format(post.data.pubDate);
+
+        // Approximate reading time
+        const wordCount = (post.body || '').split(/\s+/).length;
+        const readTime = Math.max(1, Math.ceil(wordCount / 200));
+
+        return (
+          <article
+            class="post-card"
+            data-tags={(post.data.tags || []).join(',')}
+            data-title={post.data.title.toLowerCase()}
+            data-desc={post.data.description.toLowerCase()}
+            style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);"
+            onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 28px rgba(15, 23, 42, 0.08)';"
+            onmouseleave="this.style.transform='none'; this.style.boxShadow='0 2px 8px rgba(15, 23, 42, 0.04)';"
+          >
+            <div style="padding: 28px; display: flex; flex-direction: column; flex-grow: 1;">
+              <!-- Meta Info -->
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 14px; font-size: 13px;">
+                <span style="background: #EFF6FF; color: #1E40AF; font-weight: 700; padding: 3px 10px; border-radius: 6px;">
+                  {post.data.category}
+                </span>
+                <span style="color: #64748B; display: inline-flex; align-items: center; gap: 4px;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  {readTime} min de lectura
+                </span>
+              </div>
+
+              <!-- Title -->
+              <h2 style="font-size: 1.35rem; font-weight: 700; color: #0F172A; line-height: 1.35; margin-bottom: 12px;">
+                <a href={`/blog/${post.id}/`} style="color: #0F172A; text-decoration: none;">
+                  {post.data.title}
+                </a>
+              </h2>
+
+              <!-- Description -->
+              <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                {post.data.description}
+              </p>
+
+              <!-- Tags -->
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;">
+                {post.data.tags.map((tag: string) => (
+                  <span style="font-size: 11.5px; font-weight: 500; background: #F1F5F9; color: #475569; padding: 2px 8px; border-radius: 4px;">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+
+              <!-- Footer -->
+              <div style="border-top: 1px solid #F1F5F9; padding-top: 16px; display: flex; align-items: center; justify-content: space-between;">
+                <time datetime={post.data.pubDate.toISOString()} style="font-size: 13px; color: #64748B;">
+                  {formattedDate}
+                </time>
+                <a href={`/blog/${post.id}/`} style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; color: #2453FF;">
+                  Leer artículo
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" style="display: none; text-align: center; padding: 60px 20px; background: #FFFFFF; border-radius: 16px; border: 1px dashed #CBD5E1; margin-top: 24px;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <h3 style="font-size: 1.15rem; font-weight: 700; color: #1E293B; margin-bottom: 6px;">No se encontraron artículos</h3>
+      <p style="color: #64748B; font-size: 0.95rem; margin: 0;">Probá con otros términos de búsqueda o seleccioná otra etiqueta.</p>
+    </div>
+  </div>
+
+  <!-- Client-side Interactive Filter & Search Script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('blog-search-input');
+      const tagButtons = document.querySelectorAll('.tag-pill');
+      const cards = document.querySelectorAll('.post-card');
+      const emptyState = document.getElementById('empty-state');
+      let activeTag = 'all';
+
+      function filterPosts() {
+        const query = (searchInput?.value || '').trim().toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const tags = (card.getAttribute('data-tags') || '').split(',');
+          const title = card.getAttribute('data-title') || '';
+          const desc = card.getAttribute('data-desc') || '';
+
+          const matchesTag = activeTag === 'all' || tags.includes(activeTag);
+          const matchesQuery = !query || title.includes(query) || desc.includes(query) || tags.some(t => t.toLowerCase().includes(query));
+
+          if (matchesTag && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (emptyState) {
+          emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      }
+
+      // Tag pill click handlers
+      tagButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          tagButtons.forEach((b) => {
+            b.classList.remove('active');
+            b.style.background = '#F1F5F9';
+            b.style.color = '#475569';
+            b.style.border = '1px solid #E2E8F0';
+          });
+
+          btn.classList.add('active');
+          btn.style.background = '#2453FF';
+          btn.style.color = '#FFFFFF';
+          btn.style.border = 'none';
+
+          activeTag = btn.getAttribute('data-tag') || 'all';
+          filterPosts();
+        });
+      });
+
+      // Search input handler
+      searchInput?.addEventListener('input', filterPosts);
+    });
+  </script>
+</BlogLayout>
