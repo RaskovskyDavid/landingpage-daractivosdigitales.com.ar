@@ -1,3 +1,124 @@
+---
+// Página estática migrada a Astro manteniendo 100% fidelidad de HTML, CSS y JS
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['Organization', 'ProfessionalService'],
+      '@id': 'https://daractivosdigitales.com.ar/#organization',
+      name: 'DAR Activos Digitales',
+      url: 'https://daractivosdigitales.com.ar',
+      logo: 'https://daractivosdigitales.com.ar/assets/logo.svg',
+      image: 'https://daractivosdigitales.com.ar/img/og-default.png',
+      description: 'Una página web para que te encuentren, una app para tus clientes o tu equipo, una tienda digital que cobra sola o un chatbot que te ayuda a cerrar ventas mientras dormís. Estudio del Ing. David Ariel Raskovsky.',
+      founder: {
+        '@type': 'Person',
+        name: 'David Ariel Raskovsky',
+        jobTitle: 'Ingeniero de Software'
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'San Miguel de Tucumán',
+        addressRegion: 'Tucumán',
+        addressCountry: 'AR'
+      },
+      areaServed: [
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Tucumán, Argentina'
+        },
+        {
+          '@type': 'Country',
+          name: 'Argentina'
+        }
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+5493815000000',
+        contactType: 'customer service',
+        email: 'daractivosdigitales@gmail.com',
+        availableLanguage: ['es']
+      },
+      sameAs: [
+        'https://wa.me/5493815000000',
+        'https://github.com/RaskovskyDavid',
+        'https://www.linkedin.com'
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Servicios de Desarrollo de Software',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Un chatbot que te ayuda a cerrar ventas a las 3 de la mañana',
+              description: 'Responde por WhatsApp o Instagram, arma el pedido y le manda al cliente el link de pago mientras vos dormís. Precio fijo, sin sorpresas.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Página web',
+              description: 'Para que te encuentren y te escriban. Rápida y lista para buscadores.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'App a medida',
+              description: 'Para tus clientes o tu equipo, en el celular y la computadora.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Tienda digital',
+              description: 'Catálogo, carrito y cobro online con Mercado Pago o tarjeta.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Chatbot de ventas',
+              description: 'Responde, arma el pedido y cobra por WhatsApp o Instagram, las 24 horas.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Turnos online',
+              description: 'Tus clientes reservan solos y el turno cae en tu agenda.'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Sistema para tu empresa',
+              description: 'Arreglamos, mejoramos o renovamos el sistema que ya usás.'
+            }
+          }
+        ]
+      }
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://daractivosdigitales.com.ar/#website',
+      url: 'https://daractivosdigitales.com.ar',
+      name: 'DAR Activos Digitales',
+      publisher: {
+        '@id': 'https://daractivosdigitales.com.ar/#organization'
+      }
+    }
+  ]
+};
+---
 <!doctype html>
 <html lang="es">
 <head>
@@ -6,12 +127,14 @@
   <link rel="shortcut icon" href="/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://daractivosdigitales.com.ar">
 <title>DAR Activos Digitales — Software a medida, tu app funcionando</title>
 <meta name="description" content="Una página web para que te encuentren, una app para tus clientes o tu equipo, una tienda digital que cobra sola o un chatbot que te ayuda a cerrar ventas mientras dormís. Estudio del Ing. David Ariel Raskovsky.">
+<script type="application/ld+json" is:inline set:html={JSON.stringify(homeSchema)} />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<style>
+<style is:inline>
 /* Reset & Base */
 *, *::before, *::after { box-sizing: border-box; }
 body {
@@ -98,7 +221,7 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 768px) {
-  .header-links { display: none !important; }
+  .header-links .nav-desktop { display: none !important; }
 }
 
 
@@ -152,7 +275,7 @@ button { font-family: inherit; }
 <!-- ============ HEADER ============ -->
 <header style="background: #FFFFFF; border-bottom: 1px solid #E3E8EF">
   <nav aria-label="Principal" style="max-width: 1280px; margin: 0 auto; padding: 0 32px; min-height: 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
-    <a href="#" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0E1726">
+    <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0E1726">
       <span aria-hidden="true" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center">
         <svg viewBox="0 0 36 36" width="34" height="34" fill="none" style="display: block">
           <rect width="36" height="36" rx="9" fill="#0B0D3A"/>
@@ -185,12 +308,13 @@ button { font-family: inherit; }
       <span style="font-weight: 500; font-size: 16px">Activos Digitales</span>
     </a>
     <div class="header-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 14px; margin-left: auto">
-      <a href="#servicios" style="color: #17253D; text-decoration: none">Servicios</a>
-      <a href="#destacados" style="color: #17253D; text-decoration: none">Casos</a>
-      <a href="#como-trabajo" style="color: #17253D; text-decoration: none">Cómo trabajo</a>
-      <a href="#contacto" style="color: #17253D; text-decoration: none">Contacto</a>
-      <a href="#contacto" onclick="openContactModal(event)" class="btn" style="background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 16px; min-height: 36px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center">Solicitá tu app</a>
-      <a href="https://wa.me/5493815000000" target="_blank" rel="noopener" style="border: 1px solid #0E1726; color: #0E1726; text-decoration: none; padding: 0 14px; min-height: 36px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center">WhatsApp</a>
+      <a href="#servicios" class="nav-desktop" style="color: #17253D; text-decoration: none">Servicios</a>
+      <a href="#destacados" class="nav-desktop" style="color: #17253D; text-decoration: none">Casos</a>
+      <a href="#como-trabajo" class="nav-desktop" style="color: #17253D; text-decoration: none">Cómo trabajo</a>
+      <a href="/blog" style="color: #17253D; text-decoration: none">Blog</a>
+      <a href="#contacto" class="nav-desktop" style="color: #17253D; text-decoration: none">Contacto</a>
+      <a href="#contacto" onclick="openContactModal(event)" class="btn nav-desktop" style="background: #2453FF; color: #FFFFFF; text-decoration: none; padding: 0 16px; min-height: 36px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center">Solicitá tu app</a>
+      <a href="https://wa.me/5493815000000" target="_blank" rel="noopener" class="nav-desktop" style="border: 1px solid #0E1726; color: #0E1726; text-decoration: none; padding: 0 14px; min-height: 36px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center">WhatsApp</a>
     </div>
   </nav>
 </header>
@@ -298,7 +422,7 @@ button { font-family: inherit; }
         <p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3B4A63">Blog</p>
         <h3 style="font-size: 21px; line-height: 1.3; font-weight: 600; color: #0E1726">Cuánto cuesta operar un bot de WhatsApp: mensajes, IA y servidor</h3>
         <p style="font-size: 16px; line-height: 24px; color: #17253D">Las tres partes de la factura mensual y cómo estimarlas antes de empezar.</p>
-        <a href="#contacto" class="alink" style="margin-top: auto"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Leer la nota</a>
+        <a href="/blog" class="alink" style="margin-top: auto"><span class="sq" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2 L10 7 L5 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Leer la nota</a>
       </div>
     </article>
   </div>
@@ -730,6 +854,7 @@ button { font-family: inherit; }
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
         <strong style="font-size: 15px; font-weight: 600; color: #616161">Recursos</strong>
+        <a href="/blog" style="color: #262626; text-decoration: none">Blog</a>
         <a href="#destacados" style="color: #262626; text-decoration: none">Casos reales</a>
         <a href="#destacados" style="color: #262626; text-decoration: none">Diagnóstico previo</a>
       </div>
@@ -774,7 +899,7 @@ button { font-family: inherit; }
 </div>
 
 <!-- ============ INTERACTIVE SCRIPT ============ -->
-<script>
+<script is:inline>
 // Data for Soluciones
 const solGroups = [
   {

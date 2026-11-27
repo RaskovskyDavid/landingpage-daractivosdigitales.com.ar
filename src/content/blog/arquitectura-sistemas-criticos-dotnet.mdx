@@ -1,0 +1,163 @@
+---
+title: "Arquitectura .NET para sistemas de misión crítica: resiliencia, rendimiento y soberanía tecnológica"
+description: "Cómo estructurar servicios backend en .NET 10 con Clean Architecture, pipelines de resiliencia con Polly v8, Channels para trabajo en segundo plano y PostgreSQL de alto rendimiento."
+resumen: "En sistemas donde una caída implica pérdidas directas de dinero o credibilidad, la resiliencia no puede ser un agregado tardío. Este artículo detalla cómo estructurar servicios robustos en .NET 10 combinando Polly v8, colas Channels en memoria y persistencia transaccional optimizada en PostgreSQL para operar sin interrupciones."
+pubDate: 2026-11-27
+tags: [".NET", "Arquitectura", "C#", "PostgreSQL", "Resiliencia"]
+category: "Ingeniería de Software"
+draft: false
+---
+
+Cuando una aplicación gestiona pagos, turnos médicos o procesos continuos de planta, **el costo de una caída no se mide en milisegundos de latencia sino en dinero y credibilidad**. En DAR Activos Digitales construimos sobre el principio de que los sistemas deben ser predecibles, tolerantes a fallos transitorios y completamente propiedad de la empresa que los opera.
+
+En este artículo analizamos la arquitectura de referencia en **.NET 10** que aplicamos en proyectos corporativos, combinando patrones de resiliencia con Polly v8, colas en memoria de alto rendimiento y persistencia optimizada.
+
+## 1. Pipeline de Resiliencia con Polly v8
+
+En entornos distribuidos, cualquier llamada a una pasarela de pago o servicio externo puede fallar temporalmente. En lugar de atrapar excepciones dispersas en controladores, configuramos un **ResiliencePipeline** centralizado que combina *Timeout*, *Retry* con retroceso exponencial y *Circuit Breaker*.
+
+```csharp
+using Polly;
+using Polly.CircuitBreaker;
+using Polly.Retry;
+using System.Net.Http;
+
+public static class ResilienceConfiguration
+{
+    public static ResiliencePipeline<HttpResponseMessage> CrearPipelineHttp()
+    {
+        return new ResiliencePipelineBuilder<HttpResponseMessage>()
+            .AddRetry(new RetryStrategyOptions<HttpResponseMessage>
+            {
+                MaxRetryAttempts = 3,
+                Delay = TimeSpan.FromMilliseconds(500),
+                BackoffType = DelayBackoffType.Exponential,
+                UseJitter = true,
+                ShouldHandle = new PredicateBuilder<HttpResponseMessage>()
+                    .Handle<HttpRequestException>()
+                    .HandleResult(res => (int)res.StatusCode >= 500)
+            })
+            .AddCircuitBreaker(new HttpCircuitBreakerStrategyOptions
+            {
+                FailureRatio = 0.5,
+                SamplingDuration = TimeSpan.FromSeconds(30),
+                MinimumThroughput = 8,
+                BreakDuration = TimeSpan.FromSeconds(15)
+            })
+            .AddTimeout(TimeSpan.FromSeconds(5))
+            .Build();
+    }
+}
+```
+
+Este enfoque garantiza que el sistema no sature servicios caídos y aísle las fallas sin bloquear los hilos del servidor.
+
+## 2. Procesamiento Asíncrono Desacoplado con `System.Threading.Channels`
+
+Para operaciones pesadas (como la emisión de comprobantes o el envío de notificaciones por WhatsApp), evitar colas pesadas de terceros cuando el volumen de la pyme lo permite reduce costos operativos drásticamente. `Channel<T>` proporciona un canal productor-consumidor en memoria con asignación cero de memoria (*zero-allocation*).
+
+```csharp
+using System.Threading.Channels;
+
+public record NotificacionTurno(string Telefono, string Mensaje, DateTime FechaTurno);
+
+public sealed class ColaNotificaciones
+{
+    private readonly Channel<NotificacionTurno> _canal = Channel.CreateBounded<NotificacionTurno>(
+        new BoundedChannelOptions(capacity: 5000)
+        {
+            FullMode = BoundedChannelFullMode.Wait,
+            SingleReader = true,
+            SingleWriter = false
+        });
+
+    public ValueTask EncolarAsync(NotificacionTurno item, CancellationToken ct = default) 
+        => _canal.Writer.WriteAsync(item, ct);
+
+    public IAsyncEnumerable<NotificacionTurno> LeerTodoAsync(CancellationToken ct = default) 
+        => _canal.Reader.ReadAllAsync(ct);
+}
+```
+
+## 3. Persistencia Idempotente y Migraciones en PostgreSQL
+
+La integridad transaccional requiere migraciones estrictas y control de concurrencia optimista. Diseñamos las tablas con campos de auditoría inmutables y claves UUIDv7 o enteros identity para maximizar la localidad de caché en disco:
+
+```sql
+-- Creación de tabla con particionamiento y control de estado
+CREATE TABLE transacciones_operacion (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    codigo_referencia VARCHAR(64) NOT NULL UNIQUE,
+    cliente_id BIGINT NOT NULL,
+    monto_centavos BIGINT NOT NULL CHECK (monto_centavos > 0),
+    moneda VARCHAR(3) NOT NULL DEFAULT 'USD',
+    estado VARCHAR(20) NOT NULL DEFAULT 'PENDIENTE',
+    reintentos INT NOT NULL DEFAULT 0,
+    creado_el TIMESTAMPTZ NOT NULL DEFAULT clock_timestamp(),
+    actualizado_el TIMESTAMPTZ NOT NULL DEFAULT clock_timestamp()
+);
+
+-- Índice parcial de alto rendimiento para procesamiento pendiente
+CREATE INDEX idx_transacciones_pendientes 
+ON transacciones_operacion (creado_el) 
+WHERE estado = 'PENDIENTE';
+```
+
+## 4. Automatización y Verificación en Scripts de Entrega
+
+La reproducibilidad del entorno es un requisito innegociable. Todo build debe compilarse en modo Release con advertencias tratadas como errores (`TreatWarningsAsErrors=true`) y empaquetarse de manera determinística:
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "==> Verificando dependencias y vulnerabilidades..."
+dotnet restore --locked-mode
+
+echo "==> Compilando solución con advertencias como errores..."
+dotnet build --configuration Release --no-restore -warnaserror
+
+echo "==> Ejecutando pruebas unitarias y de integración..."
+dotnet test --configuration Release --no-build --logger "console;verbosity=normal"
+
+echo "==> Generando artefacto publicado optimizado..."
+dotnet publish src/Api/Api.csproj -c Release -o ./publish --no-build
+echo "Artefacto listo para despliegue inmutable."
+```
+
+## 5. Contratos de Datos y Tipado Seguro en TypeScript
+
+El frontend consume la API utilizando tipos derivados directamente del esquema de dominio. Esto elimina desajustes en tiempo de ejecución:
+
+```typescript
+export interface TransaccionResumen {
+  readonly id: string;
+  readonly codigoReferencia: string;
+  readonly montoTotal: number;
+  readonly moneda: 'USD' | 'ARS';
+  readonly estado: 'PENDIENTE' | 'CONFIRMADO' | 'RECHAZADO';
+  readonly fechaRegistro: string;
+}
+
+export async function consultarEstadoTransaccion(
+  id: string, 
+  signal?: AbortSignal
+): Promise<TransaccionResumen> {
+  const respuesta = await fetch(`/api/transacciones/${encodeURIComponent(id)}`, {
+    headers: { 'Accept': 'application/json' },
+    signal
+  });
+
+  if (!respuesta.ok) {
+    throw new Error(`Error en consulta: ${respuesta.status} ${respuesta.statusText}`);
+  }
+
+  return (await respuesta.json()) as TransaccionResumen;
+}
+```
+
+## Conclusión
+
+Construir software sólido no depende de sumar librerías innecesarias, sino de **elegir los primitivos correctos**: pipelines de resiliencia bien calibrados, canales en memoria para aislar la carga, bases de datos relacionales con índices inteligentes y contratos tipados entre frontend y backend.
+
+En DAR Activos Digitales aplicamos esta ingeniería tanto en grandes migraciones corporativas como en aplicaciones y chatbots que deben funcionar 24/7 sin interrupciones.

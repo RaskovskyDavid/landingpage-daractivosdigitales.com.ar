@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daractivosdigitales.com.ar/sitemap-index.xml
