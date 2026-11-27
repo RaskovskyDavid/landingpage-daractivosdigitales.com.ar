@@ -73,6 +73,10 @@ pagefind/
 # dataconnect generated files
 .dataconnect
 
+# Playwright
+test-results/
+playwright-report/
+
 # Agent internal configs
 .agents/
 skills-lock.json

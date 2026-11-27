@@ -36,6 +36,12 @@ jobs:
       - name: Build site (Astro + Pagefind)
         run: npm run build
 
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run automated tests
+        run: npm run test
+
       - name: Deploy preview to Firebase Hosting (Pull Request)
         if: github.event_name == 'pull_request'
         uses: FirebaseExtended/action-hosting-deploy@v0
